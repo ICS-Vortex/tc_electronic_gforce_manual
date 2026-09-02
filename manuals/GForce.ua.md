@@ -2944,316 +2944,266 @@ Build in test v.2.07
 
 ## Список presets
 
-2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 Mono `Chorus` Mono Dyn `Delay` Mono Harmony C-Maj Mono Doubler Mono Tremolo Mono Touchwah Mono Phaser Mono Crank It Up Mono Pedal `Delay` Mono Pedal `Pitch` Mono Farout Phaser Stereo `Reverb` Stereo `Chorus` Stereo Wide Panner Stereo Dyn `Delay` Stereo Harmony C-Maj Stereo Doubler Stereo Light Tremolo Stereo Summers Strum Stereo Clean Lead Stereo Crank It Up Stereo Touchwah Stereo Pedal `Delay` Stereo Pedal `Pitch` 3-Way `Reverb` 3-Way `Chorus` 3-Way `Delay` Doubler 3-Way Slap+Slow Dly 3-Way Dyn `Delay` 3-Way Harmony A-maj 3-Way Doubler 3-Way Lead Octave up 3-Way Panner 3-Way LA's Favored 3-Way Pedal `Reverb` 3-Way Pedal Octaver Go Direct Clean Rhythm Room Clean Notes n Chords Garden Party Love and Affection Arpeggiators Dream `Power` Chord For Acoustic Guitar Troubadour Sunset Groove Lipstick Color Nice `Chorus` Lush `Chorus` Double Jeopardy Tone Girdle Phat `Chorus` Crowded House Captain Crunch Rockabilly Boogie Thick Ducktape `Delay` Slap Back `Delay` Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean Clean Clean / Dirty None None Clean / Dirty Driven None None Driven Clean/Dirty Clean / Dirty Clean Clean / Dirty Clean / Dirty Distorted Clean / Dirty Heavy OD Driven Clean / Dirty Clean/Dirty X X X X X X X X Простий `Chorus` `preset`, підходящий для будь-якого mono setup.
-Dynamic `Delay` `preset`, підходящий для будь-якого mono setup.
-Input level independent.
-`Preset` з Intelligent `Pitch`-shift у C-major, підходящий для будь-якого mono setup.
-Detuned setting, що створює doubler effect, підходящий для будь-якого mono setup.
-Простий Tremolo `preset`, підходящий для будь-якого mono setup.
-Простий Touch Wah `preset`, підходящий для будь-якого mono setup.
-Простий Phaser `preset`, підходящий для будь-якого mono setup.
-Легко «накручений» setting, підходящий для будь-якого mono setup.
-Pedal to toe підключає `Delay` input.
-Підходить для будь-якого mono setup.
-Pedal додає нижчу octave.
-Підходить для будь-якого mono setup.
-Phaser з LFO controlled speed, дійсно незвичний.
-Підходить для будь-якого mono setup.
-Простий `Reverb` `preset`, підходящий для будь-якого stereo setup.
-Простий Chorused `preset`, підходящий для будь-якого stereo setup.
-Panner, що панорамує за межі нормального stereo image.
-Dynamic `Delay` `preset`, підходящий для будь-якого stereo setup.
-Input level independent.
-`Preset` з Intelligent `Pitch`-shift у A-major, підходящий для будь-якого stereo setup.
-Detuned setting, що створює doubler effect, підходящий для будь-якого stereo setup.
-Легкий Tremolo `preset`, підходящий для будь-якого stereo setup.
-Чудовий chorused, shimmery doubler, `delay` і `reverb`, подібний до звуку гітариста ex-Police.
-Clean `preset` із detuned `pitch` і `chorus`.
-Легко «накручений» setting, підходящий для будь-якого stereo setup.
-Input sensitive Wah `preset`, підходящий для будь-якого stereo setup.
-Pedal підключає `Delay` input.
-Підходить для будь-якого stereo setup.
-Pedal додає нижчу octave.
-Підходить для будь-якого mono setup.
-Простий `Reverb` `preset`, підходящий для будь-якого 3-way або parallel setup.
-Простий `Chorus` `preset`, підходящий для будь-якого 3-way або parallel setup.
-Короткий `delay`, що створює doubler effect, підходящий для будь-якого 3-way або parallel setup.
-Симультанний slapback `delay` плюс long `delay`, підходящий для будь-якого 3-way або parallel setup.
-Dynamic `Delay` `preset`, підходящий для будь-якого 3-way або parallel setup.
-Input level independent.
-`Preset` з Intelligent `Pitch`-shift у A-major, підходящий для будь-якого 3-way або parallel setup.
-Detuned setting, що створює doubler effect, підходящий для будь-якого 3-way або parallel setup.
-Додає octave higher voice до вашого lead sound.
-Підходить для будь-якого 3-way або parallel setup.
-Легкий slow panning effect.
-Підходить для будь-якого 3-way або parallel setup.
-Lead sound у стилі LA, підходящий для будь-якого 3-way або parallel setup.
-Pedal контролює level `Reverb`.
-Підходить для будь-якого 3-way або parallel setup.
-Pedal додає octave voice до вашого звуку.
-Підходить для будь-якого 3-way або parallel setup.
-EQ & Compression.
-Short room і легкий `Chorus`.
-Rhythm type `preset`.
-Pedal підключено до volume.
-Темний, земний, насичений звук акустичної гітари.
-Насичений, compressed, органічний звук із легким `chorus`.
-Підключіть акустику напряму — і вперед.
-Vibrato-like `Chorus` + Compression, optional `Reverb`.
-Оптимізовано для `power` chords, із доданим flanging.
-`Drive` готовий до роботи.
-Налаштовано для high-end Acoustic напряму в input.
-Чудовий solo acoustic sound, чистий, punchy і tight. Ідеально «сидить» у записаних треків.
-Out of phase, dominant sound.
-ДУЖЕ articulate.
-Чудово для muted heavy rhythm/picking style.
-Tight, fat effect, чудовий для додавання простору staccato rhythm guitar.
-Простий sine `Chorus` effect у комбінації з hall-like `Reverb`.
-Lush `Chorus` setting, добре підфарбовує clean sound.
-Slapback `Delay` і room `Reverb`.
-`Compressor` із optional EQ і Doubler.
-EQ + `Chorus`.
-Яскравий rhythm sound із slap `Delay` і `reverb`.
-Death Metal Stereo Detuning із легким slap.
-Спробуйте на Metallica's "`Enter` Sandman" Classic 50's echo sound, налаштований імітувати time `delay` стандартного reel-to-reel recorder.
-Detuned, warm, ducked Delays.
-Input level dependent.
-По суті, саме те, що написано в назві.
-Mono Mono Mono Mono Mono Mono Mono Mono Mono Mono Mono Stereo Stereo Stereo Stereo Stereo Stereo Stereo Stereo Stereo Stereo Stereo Stereo Stereo 3-Way 3-Way 3-Way 3-Way 3-Way 3-Way 3-Way 3-Way 3-Way 3-Way 3-Way 3-Way Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 On The Edge A Clean Fortress Gated `Delay` 60's Flanging Funky `Chorus` Flange Yer Face Dream Phaser Churner Stereo Tremolo Beatle Chords Phased Tremolo In My Room Spin Off Vibropedal Room Tremolo + `Reverb` Day at the Beach Spinner Wahble Gatelike Filterfun Funkypick Park the Wah Here Tube Scream Raunchy Rhythm Malcolm Rubbery Room Crunch Phasecomp Fuzzphaser Pedal A Little Crunch Loose Tubes Les is Paul Yee Ha Flange Box Flanger In Verb Surround `Reverb` Guitar Hero Landau Clean Ballad Clean Ed Now and Then So Stern LA Studio Rack Straight Lead Lead Westcoast Lead Fusionlead Clean Chorused `Delay` Clean Ducked Swell Echocomplex Pedal Feed `Delay` Final Frontier Wishey Wash Tap Twang Slap Answering Echo Wes M Jazz Lead Low Note Thicken Clean / Dirty Clean Clean / Dirty Clean / Dirty Clean Clean / Dirty Driven Clean Driven Clean Clean Clean Clean / Dirty Clean / Dirty Clean / Dirty Clean Clean / Dirty Clean / Dirty Clean Driven Clean Clean Clean Clean Clean Clean Clean Clean Clean Clean Clean/Dirty Clean/Dirty Clean Major OD Clean Clean Heavy OD Clean Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean Clean / Dirty Clean Clean / Dirty Clean / Dirty Clean Clean / Dirty Dirty Clean / Dirty Clean Clean X X X X X X X X X X X X X X U2 inspired Delays, як у "Where The Streets Have No Name".
-Sting's "Fortress Around Your Heart" або звук Andy Summer's у "Every Breath You Take".
-`Delay` «грає» з вами, але не без вас.
-Фактично Flanges through zero, затримуючи straight signal через `Delay` block у parallel.
-Добре для R&B на clean setting.
-Універсальний Flanger, чудовий для guitar і vocal `effects`.
-Супер для acoustic guitar.
-Ambient, spacey, stereo Phase-Shifting sound.
-Slow sweeping resonant Flanger, Phaser із `Chorus`, `Pitch` Detune і slap `Delay` у small Room.
-Простий Tremolo, але протилежний у left і right.
-Pedal to heel = Stereo guitar / Pedal to toe = Fast rotating cabinet effect.
-Чудово для folk ballads або Tex-Mex tunes на clean setting.
-Сильний Tremolo.
-Clean surf guitar sound, що нагадує ballads Beach Boys', The Surfaris або The Ventures.
-Rotary effect.
-Використовуйте Ext. 1 для контролю speed.
-Fast Vibrato з `Chorus` із dual detune і room `reverb`.
-Pedal уповільнює Vibrato і знижує `Reverb`.
-Досить простий `preset` із classic Tremolo і Hall.
-Pedal to heel = Surfers dream / Pedal to toe = Tremolo.
-Pedal to heel = Direct guitar / Pedal to toe = Spinning guitar.
-Fast Wah Filter у `Chorus` і Gate-like `reverb`, добре для чогось funky.
-Pedal to heel знижує Wah.
-Envelope controlled fast downward-sliding Wah Filter із slow rise time + `Chorus` і small `Reverb` Hall.
-Parked Wah effect.
-Звучить як Dire Strait's "Money for Nothing" або Boston's "Long Time".
-Pedal to heel = Clean rhythm sound, Pedal to toe = Vintage Tube screamer + Room.
-Базовий grunge rhythm guitar patch.
-Чудовий rhythm sound, зручний із кількома гітаристами в одній групі.
-Чудовий overall rock/blues sound.
-Smooth `Drive` fuzz із dynamic `Chorus`, smooth Phaser, Detuner і nice Room.
-Добре для comping Chord work.
-Thick, fuzzed and phased effect, добре для choppy comping chords.
-Pedal контролює amount of low end.
-Встановіть pedal to toe для thin fuzzed sound.
-Подайте на G-Force clean setting — і отримайте легкий crunch.
-Добре для rhythm.
-Дає той crunch із loose bottom, знайомий із older tube amps.
-Добре для rhythm.
-Дає mid-rangy sound.
-Чудовий rhythm sound.
-Compressed Country twang.
-Slow semi-resonant Flange у very small "box" like `reverb`.
-Добре для distorted chunks.
-Slow rolling Flanger із feedback.
-Slow moving `reverb`.
-Чудово для clean ballad leads.
-Steve Lukather, Mike Landau, Dan Huff.
-Великий 80's sound.
-Додайте major solo overdrive.
-Clean sound LA studio session player.
-Smooth, pretty, Clean Shaven !!
-Van Halen Present = `Pitch`-shift / Past = Phaser.
-Виберіть `Pitch` або Filter effect button для епохи.
-Натхненний гітаристом Miles Davis — Mike Stern.
-Jazzy Ultra "Womanizer" effect.
-Яскравий "LA-like" lead `preset`.
-Optional `Pitch` octave up.
-Універсальний `preset` для pop leadlines.
-Гарний tail `Delay` і `Reverb`.
-Трохи `Delay`, `reverb` і `chorus`.
-Додайте crunchy tone і насолоджуйтеся California feel.
-Chorused lead sound, натхненний такими, як Mike Stern.
-`Reverb` і Chorused `Delay`, що `Chorus` лише ваші long notes.
-Dynamic Delays.
-Classic dull sound Echoplex із легким moving detune для flutter.
-Pedal to heel = no `Delay` / Pedal to toe = feeds the `Delay` input.
-Добре для dream like application на clean sound.
-Fast subtle Phaser у detune і Dly/Verb wash + `Chorus`.
-Добре для clean chords, fuzzed lead.
-Подайте dirty setting.
-`Chorus` і `Delay` slap роблять звук wide і full.
-Добре для rhythm.
-Bryan May у Brighton Rock або Steve Vai на альбомі David Lee Roth's "Skyscraper".
-Для Octave lead jazz lines à la Wes Montgomery.
-Pedal to heel = shimmering rhythm guitar / Pedal to toe = Added low octave.
-Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Rhythm Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 C+W Diaton Solo in A Eats Your Attack Pedal Octave Down Pedal Octave Up `Pitch` Dm 5 and 3 Pedal Add Octave Up Flanger Beautyverb Verb Morphed to Dly I've Been Drinking Panner Pedal Picking Style Envelope Filter Nervosa Doubler Blues Room Hammer to Fall Iron Man Thick'n Juicy Lead Smooth Tubedrive Duckman Lead Lead Pedal Wah Touch Wah Driven Pedal Iiaahh Driven Lead Octavia Lead The Smiths Cyber Sci-fi Surfer Steppers in Time Spaceyplace Bluebox Echophased Echoverb Duality `Effects` Bowling Multitaps Slow Swell Pad Expandelay Infinity and Beyond Deep Bass 9 Flange Pedal Speed Duck on Crack Sus4 Dreamscape Crazy Brown Lead Eastern Ocean Skysaw Doubler Synthesized Leads Sexwah Pedalead Fuzz Industrial Mayhem Electric Church Trance Yer Ass Off Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean Clean Clean / Dirty Distorted Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean Clean Clean Clean Clean Clean / Dirty Clean Clean Dirty Clean Clean Clean Clean Clean / Dirty Clean / Dirty Clean Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean Clean / Dirty Distorted Clean / Dirty Clean / Dirty Clean / Dirty Clean Clean Clean Clean / Dirty Clean / Dirty Clean / Dirty X X X X X X X X X X X X X X X X Play single-note runs для миттєвих twangy Georgian C&W harmonies.
-Найкраще на higher strings.
-Envelope controlled input volume.
-Автоматично виконує Volume knob trick.
-Pedal виконує Whammy down при heel.
-Pedal виконує Whammy up при toe.
-Single note lead.
-Play у D-minor із third і fifth.
-Pedal to heel = crunchy lead sound, Pedal to toe = adds octave voice.
-Dense, thick `reverb` із medium long decay через slow flanger.
-Добре для leads і chords.
-Envelope controlled crossfade між `Reverb` і `Delay`.
-`Reverb`, коли ви граєте; `Delay`, коли зупиняєтеся.
-Pedal to heel = Phased guitar / Pedal to toe = Room spinning.
-Pedal панорамує з left до right.
-Input sensitive parallel Wah Filter, чудовий для picking guitar.
-Envelope Filter effect.
-Input level threshold dependent.
-Fluttery Phaser і Panning із `Chorus` і `Pitch`-shifter doubles.
-Добре для lead і chords.
-Добре для blues.
-Totally dominant distorted main rhythm guitar sound, натхненний відомою піснею Queen.
-The Ultimate `power` chord sound.
-Metallica, saturated, ominous.
-Перевірте назву — треба ще щось додавати?
-Nice greasy lead.
-Дає `drive` із loose bottom, знайомий із older tube amps.
-Добре для lead. «Крякає» як duck завдяки Wah-Wah.
-Повертає 70's.
-Подайте на G-Force clean tone і Wah away педаллю.
-Чудово для leads.
-Подайте на G-Force clean tone і Wah away picking `power`.
-Чудово для leads.
-Подайте на G-Force dirty tone і talk away педаллю.
-Дуже спеціальний lead sound.
-Overdriven lead sound із octave shifter у big hall.
-Добре на distortion setting для wild "Yes" type solos.
-Wide tremolo sound поверх punchy distorted sound.
-Натхненний... здогадайтеся ким!
-Fast Panning `Chorus`, sweeping Phaser і `Pitch`-shifter doubles у filtered slap Delays і very small `Reverb`.
-Stepped Formant Filter, що крокує в часі з repeating Delays.
-Play along із `Delay` time для найкращого ефекту.
-Slow echoes і big `Reverb`.
-Pedal контролює Phaser level.
-The kitchen sink: full fuzz, deep Phaser, `pitch` at -12 and -5, panned echo і `Chorus`.
-Добре на leads.
-Smooth `chorus`, echo + long hall Verb — звучите як ECM artist.
-Два separate effect chains.
-Pedal контролює speed і level Phaser.
-Play melodically в часі з echoes для fun і ввімкніть `Drive` для fuzzed sound.
-Dreamy "attack free" sound для slow chord або melody passages.
-Input level dependent.
-Перші чотири repeats стають increasingly louder, потім subsequent repeats зменшуються в volume.
-Long `Reverb` і Delays.
-Highly compressed bass sound для ambient/Techno/TR303 emulation.
-Pedal контролює speed Flanger.
-Pedal to heel = Moderately normal guitar / Pedal to toe = Dynamically contr. duck (1 Octave up).
-Dual Shifters додають fourth і fifth, створюючи sus4 chord із `Chorus`, `Delay` і `Reverb`.
-Найкраще на leads.
-Shifter додає Octave up і down із crazed Pan і Phaser.
-Dynamic `Delay`.
-Dual shifters на 5th і octave above у `chorus` + very wet long `Reverb`.
-Добре для slow leads.
-Crashy fuzz у dual `Pitch`-shifters на octave up із sweeping high feedback Flanger.
-Чудово для leads.
-Fuzz, pitched octave up і down у `Compressor` із Touchwah і slap Delays.
-Добре на soft leads.
-Complex distorted effect із octave + fifth у `Chorus` і tap Delays.
-Pedal контролює Formant filters.
-Touchwah і low octave shifter.
-Input level dependent.
-Removes your attack.
-Звучить synth-like.
-Для single note lines.
-Використовуйте Ext. 1 для morph від Flanger до Detuned Octaver до Touchwah і навпаки.
-Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 Double Fridge Solo Tribute 2 Bootsy War of the Worlds Inside Out Dyn Pan Far Away Vibrato Dynamic Lesley Varispeed Phaser Dark Envelope Filter Touch Wah + Octave Who's Next.
-Broken Speaker Touch Res and `Delay` Jam With Loop Pedal Hold + `Reverb` Very Scary Horror Talking Whales Flyverb Ducker Chord Stabs Bright Room Church Grand Hall Cathedral Spring `Reverb` Slow `Reverb` `Chorus` Straight `Chorus` Straight Fast Flanger Straight Flanger Straight Fast Vibrato Classic Tremolo Stereo Tremolo Square Tremolo Stereo Pan Tap `Tempo` Surround Panner Straight `Delay` Two Delays Tape `Delay` Triplet Ping-Pong 4 Tap `Delay` Pedal Dynamic `Delay` Soft `Compressor` Hard `Compressor` Limiter Dual Detune Pedal Whammy Down Whammy Up G-major `Pitch` Pedal D-minor 5 and 3 Octave Dubbing Phase Off Phaser Pedal Speed Clean Wah Pedal Clean Touch-Wah Clean Auto Wah Formant Touch Formant Pedal Resonance Pedal Clean / Dirty Clean Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Driven Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty X X X X X X X X X X X X X X Без G-Force, можливо, знадобилися б два racks gear для цього звуку.
-Funky bass rig.
-Play single note melodies для миттєвих cheesy Sci-fi tones.
-Slow Panner прискорюється, коли signal fades.
-Ви «далеко» із Vibrato sound.
-Крутиться fast із louder signals.
-Цей Phaser постійно змінює speed.
-Compressed Envelope-Filtered `Reverb`.
-Input level dependent.
-По суті, саме те, що в назві.
-One octave up і Touchwah.
-Square Tremolo і Autowah.
-Transistor radio guitar.
-Input level dependent Resonance Filter і `Delay`.
-Створіть 1000ms loop і jam over it.
-Ext. 1 контролює looping, Ext. 2 — adding loop/playing on top of the loop.
-Strike a chord, pedal to toe — і є nice background для play on.
-Push pedal back and forth під час play, але watch out for the Demons.
-Push pedal gently під час long sustaining notes і listen to the talking whales.
-Heeellllp meee!!.
-Муха, що застрягла в звуку!
-Chorused doubled sound у long `Reverb`, shifted octave і Phaser.
-Good leads.
-Pedal to heel = Mono guitar signal / Pedal to toe = Stereo octave up.
-Універсальний блок all-purpose `Reverb` Room.
-Універсальний блок all-purpose Church `Reverb`.
-Універсальний блок all-purpose Grand Hall `Reverb`.
-Універсальний блок all-purpose Cathedral `Reverb`.
-Універсальний блок all-purpose Spring `Reverb`.
-Універсальний блок all-purpose slow-reacting `Reverb`.
-Універсальний блок all-purpose straight `Chorus`.
-Універсальний блок all-purpose straight `Chorus`, трохи faster.
-Універсальний блок all-purpose straight Flanger.
-Універсальний блок all-purpose straight Flanger, трохи faster.
-Універсальний блок all-purpose Vibrato (100% `Chorus`).
-Універсальний блок all-purpose Classic Tremolo.
-Універсальний блок all-purpose Tremolo, opposite у left і right.
-Універсальний блок all-purpose Square Tremolo, також known as transforming.
-Універсальний блок all-purpose Panner.
-Tap the `tempo`, який вам потрібен.
-Універсальний блок all-purpose Panner, що pans past normal stereo image.
-Універсальний блок all-purpose 500ms `Delay`.
-Універсальний блок all-purpose `Delay`.
-Left = 500ms / Right = 400ms.
-Універсальний блок all-purpose Highcut Filtered `Delay`, як old tape `Delay`.
-Універсальний блок all-purpose Ping-Pong `Delay`.
-Універсальний блок all-purpose 4-tap `Delay`.
-Pedal контролює `mix` level `Delay`.
-Універсальний блок all-purpose `Delay`.
-Input level dependent, plays when you stop playing.
-Універсальний блок all-purpose Soft `Compressor`.
-Універсальний блок all-purpose Hard `Compressor`.
-Універсальний блок all-purpose Limiter.
-Універсальний блок all-purpose `Pitch` Detune setting.
-Pedal контролює detuning Voice 1.
-Універсальний блок all-purpose octave down `Pitch`-shifter.
-Pedal контролює `pitch`.
-Універсальний блок all-purpose octave up `Pitch`-shifter.
-Pedal контролює `pitch`.
-Single block із Intelligent `Pitch`-shifter для G-major.
-Pedal контролює level third.
-Single block із Intelligent `Pitch`-shifter для D-minor із fifth і third.
-Single block із Octave down `Pitch`-shift.
-Універсальний блок all-purpose Phaser.
-Single block із another all-purpose Phaser.
-Pedal контролює speed Phaser.
-Універсальний блок all-purpose Wah Wah.
-Pedal контролює Wah frequency.
-Універсальний блок all-purpose Touchwah.
-Input level dependent.
-Універсальний блок all-purpose Autowah.
-External LFO контролює Wah frequency.
-Універсальний блок all-purpose touch-sensitive Formant Filter.
-Input level dependent.
-Універсальний блок all-purpose Formant Filter.
-Pedal контролює Formant frequency.
-Універсальний блок all-purpose Resonance Filter.
-Pedal контролює Resonance frequency.
-Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Wacky Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block Block 220 221 222 223 224 225 `Drive` 1 `Drive` 2 `Drive` 3 `Noise Gate` Slow `Noise Gate` Slow `Empty Routing` Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Clean / Dirty Фільтр Resonance.
-Універсальний блок all-purpose `Drive`.
-Універсальний блок all-purpose `Drive`.
-Універсальний блок all-purpose `Drive`.
-По суті, саме те, що в назві.
-По суті, саме те, що в назві.
-`Empty Routing` — добре для початку створення власних presets.
-Block Block Block Block Block Block
+**Presets List** — ROM presets 1–225 (оригінал, стор. 57–61)
+
+### Mono (1–12)
+
+| # | Preset | Tone | Pedal | Description |
+| :---: | :--- | :--- | :---: | :--- |
+| 1 | Mono Reverb | Clean / Dirty |  | Простий Reverb preset, підходящий для будь-якого mono setup. |
+| 2 | Mono Chorus | Clean / Dirty |  | Простий Chorus preset, підходящий для будь-якого mono setup. |
+| 3 | Mono Dyn Delay | Clean / Dirty |  | Dynamic Delay preset, підходящий для будь-якого mono setup. Input level independent. |
+| 4 | Mono Harmony C-Maj | Clean / Dirty |  | Preset з Intelligent Pitch-shift у C-major, підходящий для будь-якого mono setup. |
+| 5 | Mono Doubler | Clean / Dirty |  | Detuned setting, що створює doubler effect, підходящий для будь-якого mono setup. |
+| 6 | Mono Tremolo | Clean / Dirty |  | Простий Tremolo preset, підходящий для будь-якого mono setup. |
+| 7 | Mono Touchwah | Clean / Dirty |  | Простий Touch Wah preset, підходящий для будь-якого mono setup. |
+| 8 | Mono Phaser | Clean / Dirty |  | Простий Phaser preset, підходящий для будь-якого mono setup. |
+| 9 | Mono Crank It Up | Clean / Dirty |  | Легко «накручений» setting, підходящий для будь-якого mono setup. |
+| 10 | Mono Pedal Delay | Clean / Dirty | **X** | Pedal to toe підключає Delay input. Підходить для будь-якого mono setup. |
+| 11 | Mono Pedal Pitch | Clean / Dirty | **X** | Pedal додає нижчу octave. Підходить для будь-якого mono setup. |
+| 12 | Mono Farout Phaser | Clean / Dirty |  | Phaser з LFO controlled speed, дійсно незвичний. Підходить для будь-якого mono setup. |
+
+### Stereo (13–25)
+
+| # | Preset | Tone | Pedal | Description |
+| :---: | :--- | :--- | :---: | :--- |
+| 13 | Stereo Reverb | Clean / Dirty |  | Простий Reverb preset, підходящий для будь-якого stereo setup. |
+| 14 | Stereo Chorus | Clean / Dirty |  | Простий Chorused preset, підходящий для будь-якого stereo setup. |
+| 15 | Stereo Wide Panner | Clean / Dirty |  | Panner, що панорамує за межі нормального stereo image. |
+| 16 | Stereo Dyn Delay | Clean / Dirty |  | Dynamic Delay preset, підходящий для будь-якого stereo setup. Input level independent. |
+| 17 | Stereo Harmony C-Maj | Clean / Dirty |  | Preset з Intelligent Pitch-shift у A-major, підходящий для будь-якого stereo setup. |
+| 18 | Stereo Doubler | Clean / Dirty |  | Detuned setting, що створює doubler effect, підходящий для будь-якого stereo setup. |
+| 19 | Stereo Light Tremolo | Clean / Dirty |  | Легкий Tremolo preset, підходящий для будь-якого stereo setup. |
+| 20 | Stereo Summers Strum | Clean / Dirty |  | Чудовий chorused, shimmery doubler, delay і reverb, подібний до звуку гітариста ex-Police. |
+| 21 | Stereo Clean Lead | Clean / Dirty |  | Clean preset із detuned pitch і chorus. |
+| 22 | Stereo Crank It Up | Clean / Dirty |  | Легко «накручений» setting, підходящий для будь-якого stereo setup. |
+| 23 | Stereo Touchwah | Clean / Dirty |  | Input sensitive Wah preset, підходящий для будь-якого stereo setup. |
+| 24 | Stereo Pedal Delay | Clean / Dirty | **X** | Pedal підключає Delay input. Підходить для будь-якого stereo setup. |
+| 25 | Stereo Pedal Pitch | Clean / Dirty | **X** | Pedal додає нижчу octave. Підходить для будь-якого mono setup. |
+
+### 3-Way (26–37)
+
+| # | Preset | Tone | Pedal | Description |
+| :---: | :--- | :--- | :---: | :--- |
+| 26 | 3-Way Reverb | Clean / Dirty |  | Простий Reverb preset, підходящий для будь-якого 3-way або parallel setup. |
+| 27 | 3-Way Chorus | Clean / Dirty |  | Простий Chorus preset, підходящий для будь-якого 3-way або parallel setup. |
+| 28 | 3-Way Delay Doubler | Clean / Dirty |  | Короткий delay, що створює doubler effect, підходящий для будь-якого 3-way або parallel setup. |
+| 29 | 3-Way Slap+Slow Dly | Clean / Dirty |  | Симультанний slapback delay плюс long delay, підходящий для будь-якого 3-way або parallel setup. |
+| 30 | 3-Way Dyn Delay | Clean / Dirty |  | Dynamic Delay preset, підходящий для будь-якого 3-way або parallel setup. Input level independent. |
+| 31 | 3-Way Harmony A-maj | Clean / Dirty |  | Preset з Intelligent Pitch-shift у A-major, підходящий для будь-якого 3-way або parallel setup. |
+| 32 | 3-Way Doubler | Clean / Dirty |  | Detuned setting, що створює doubler effect, підходящий для будь-якого 3-way або parallel setup. |
+| 33 | 3-Way Lead Octave up | Clean / Dirty |  | Додає octave higher voice до вашого lead sound. Підходить для будь-якого 3-way або parallel setup. |
+| 34 | 3-Way Panner | Clean / Dirty |  | Легкий slow panning effect. Підходить для будь-якого 3-way або parallel setup. |
+| 35 | 3-Way LA's Favored | Clean / Dirty |  | Lead sound у стилі LA, підходящий для будь-якого 3-way або parallel setup. |
+| 36 | 3-Way Pedal Reverb | Clean / Dirty | **X** | Pedal контролює level Reverb. Підходить для будь-якого 3-way або parallel setup. |
+| 37 | 3-Way Pedal Octaver | Clean / Dirty | **X** | Pedal додає octave voice до вашого звуку. Підходить для будь-якого 3-way або parallel setup. |
+
+### Rhythm (38–88)
+
+| # | Preset | Tone | Pedal | Description |
+| :---: | :--- | :--- | :---: | :--- |
+| 38 | Go Direct | Clean |  | EQ & Compression. |
+| 39 | Clean Rhythm Room | Clean |  | Short room і легкий Chorus. |
+| 40 | Clean Notes n Chords | Clean / Dirty | **X** | Rhythm type preset. Pedal підключено до volume. |
+| 41 | Garden Party | None |  | Темний, земний, насичений звук акустичної гітари. |
+| 42 | Love and Affection | None |  | Насичений, compressed, органічний звук із легким chorus. Підключіть акустику напряму — і вперед. |
+| 43 | Arpeggiators Dream | Clean / Dirty |  | Vibrato-like Chorus + Compression, optional Reverb. |
+| 44 | Power Chord | Driven |  | Оптимізовано для power chords, із доданим flanging. Drive готовий до роботи. |
+| 45 | For Acoustic Guitar | None |  | Налаштовано для high-end Acoustic напряму в input. |
+| 46 | Troubadour | None |  | Чудовий solo acoustic sound, чистий, punchy і tight. Ідеально «сидить» у записаних треків. |
+| 47 | Sunset Groove | Driven |  | Out of phase, dominant sound. ДУЖЕ articulate. Чудово для muted heavy rhythm/picking style. |
+| 48 | Lipstick Color | Clean/Dirty | **X** | Tight, fat effect, чудовий для додавання простору staccato rhythm guitar. |
+| 49 | Nice Chorus | Clean / Dirty |  | Простий sine Chorus effect у комбінації з hall-like Reverb. |
+| 50 | Lush Chorus | Clean |  | Lush Chorus setting, добре підфарбовує clean sound. |
+| 51 | Double Jeopardy | Clean / Dirty |  | Slapback Delay і room Reverb. |
+| 52 | Tone Girdle | Clean / Dirty |  | Compressor із optional EQ і Doubler. |
+| 53 | Phat Chorus | Distorted |  | EQ + Chorus. |
+| 54 | Crowded House | Clean / Dirty |  | Яскравий rhythm sound із slap Delay і reverb. |
+| 55 | Captain Crunch | Heavy OD |  | Death Metal Stereo Detuning із легким slap. Спробуйте на Metallica's "Enter Sandman". |
+| 56 | Rockabilly Boogie | Driven |  | Classic 50's echo sound, налаштований імітувати time delay стандартного reel-to-reel recorder. |
+| 57 | Thick Ducktape Delay | Clean / Dirty |  | Detuned, warm, ducked Delays. Input level dependent. |
+| 58 | Slap Back Delay | Clean/Dirty |  | По суті, саме те, що написано в назві. |
+| 59 | A Little Bit Country | Clean |  | Howdy — перевірте цей preset з ultra clean і bright sound. |
+| 60 | On The Edge | Clean / Dirty |  | U2 inspired Delays, як у "Where The Streets Have No Name". |
+| 61 | A Clean Fortress | Clean |  | Sting's "Fortress Around Your Heart" або звук Andy Summer's у "Every Breath You Take". |
+| 62 | Gated Delay | Clean / Dirty |  | Delay «грає» з вами, але не без вас. |
+| 63 | 60's Flanging | Clean / Dirty |  | Фактично Flanges through zero, затримуючи straight signal через Delay block у parallel. |
+| 64 | Funky Chorus | Clean |  | Добре для R&B на clean setting. |
+| 65 | Flange Yer Face | Clean / Dirty |  | Універсальний Flanger, чудовий для guitar і vocal effects. Супер для acoustic guitar. |
+| 66 | Dream Phaser | Driven |  | Ambient, spacey, stereo Phase-Shifting sound. |
+| 67 | Churner | Clean |  | Slow sweeping resonant Flanger, Phaser із Chorus, Pitch Detune і slap Delay у small Room. |
+| 68 | Stereo Tremolo | Driven |  | Простий Tremolo, але протилежний у left і right. |
+| 69 | Beatle Chords | Clean | **X** | Pedal to heel = Stereo guitar / Pedal to toe = Fast rotating cabinet effect. |
+| 70 | Phased Tremolo | Clean |  | Чудово для folk ballads або Tex-Mex tunes на clean setting. Сильний Tremolo. |
+| 71 | In My Room | Clean |  | Clean surf guitar sound, що нагадує ballads Beach Boys', The Surfaris або The Ventures. |
+| 72 | Spin Off | Clean / Dirty | **X** | Rotary effect. Використовуйте Ext. 1 для контролю speed. |
+| 73 | Vibropedal Room | Clean / Dirty | **X** | Fast Vibrato з Chorus із dual detune і room reverb. Pedal уповільнює Vibrato і знижує Reverb. |
+| 74 | Tremolo + Reverb | Clean / Dirty |  | Досить простий preset із classic Tremolo і Hall. |
+| 75 | Day at the Beach | Clean | **X** | Pedal to heel = Surfers dream / Pedal to toe = Tremolo. |
+| 76 | Spinner | Clean / Dirty | **X** | Pedal to heel = Direct guitar / Pedal to toe = Spinning guitar. |
+| 77 | Wahble Gatelike | Clean / Dirty | **X** | Fast Wah Filter у Chorus і Gate-like reverb, добре для чогось funky. Pedal to heel знижує Wah. |
+| 78 | Filterfun Funkypick | Clean |  | Envelope controlled fast downward-sliding Wah Filter із slow rise time + Chorus і small Reverb Hall. |
+| 79 | Park the Wah Here | Driven | **X** | Parked Wah effect. Звучить як Dire Strait's "Money for Nothing" або Boston's "Long Time". |
+| 80 | Tube Scream | Clean | **X** | Pedal to heel = Clean rhythm sound, Pedal to toe = Vintage Tube screamer + Room. |
+| 81 | Raunchy Rhythm | Clean |  | Базовий grunge rhythm guitar patch. |
+| 82 | Malcolm | Clean |  | Чудовий rhythm sound, зручний із кількома гітаристами в одній групі. Чудовий overall rock/blues sound. |
+| 83 | Rubbery Room | Clean | **X** | Smooth Drive fuzz із dynamic Chorus, smooth Phaser, Detuner і nice Room. Добре для comping Chord work. |
+| 84 | Crunch Phasecomp | Clean | **X** | Thick, fuzzed and phased effect, добре для choppy comping chords. |
+| 85 | Fuzzphaser Pedal | Clean |  | Pedal контролює amount of low end. Встановіть pedal to toe для thin fuzzed sound. |
+| 86 | A Little Crunch | Clean |  | Подайте на G-Force clean setting — і отримайте легкий crunch. Добре для rhythm. |
+| 87 | Loose Tubes | Clean |  | Дає той crunch із loose bottom, знайомий із older tube amps. Добре для rhythm. |
+| 88 | Les is Paul | Clean |  | Дає mid-rangy sound. Чудовий rhythm sound. |
+
+### Lead (89–137)
+
+| # | Preset | Tone | Pedal | Description |
+| :---: | :--- | :--- | :---: | :--- |
+| 89 | Yee Ha | Clean | **X** | Compressed Country twang. |
+| 90 | Flange Box | Clean/Dirty |  | Slow semi-resonant Flange у very small "box" like reverb. Добре для distorted chunks. |
+| 91 | Flanger In Verb | Clean/Dirty |  | Slow rolling Flanger із feedback. |
+| 92 | Surround Reverb | Clean |  | Slow moving reverb. Чудово для clean ballad leads. |
+| 93 | Guitar Hero | Major OD |  | Steve Lukather, Mike Landau, Dan Huff. Великий 80's sound. Додайте major solo overdrive. |
+| 94 | Landau Clean | Clean |  | Clean sound LA studio session player. |
+| 95 | Ballad Clean | Clean |  | Smooth, pretty, Clean Shaven !! |
+| 96 | Ed Now and Then | Heavy OD |  | Van Halen Present = Pitch-shift / Past = Phaser. Виберіть Pitch або Filter effect button для епохи. |
+| 97 | So Stern | Clean |  | Натхненний гітаристом Miles Davis — Mike Stern. Jazzy Ultra "Womanizer" effect. |
+| 98 | LA Studio Rack | Clean / Dirty |  | Яскравий "LA-like" lead preset. Optional Pitch octave up. |
+| 99 | Straight Lead | Clean / Dirty |  | Універсальний preset для pop leadlines. |
+| 100 | Lead | Clean / Dirty |  | Гарний tail Delay і Reverb. |
+| 101 | Westcoast Lead | Clean / Dirty |  | Трохи Delay, reverb і chorus. Додайте crunchy tone і насолоджуйтеся California feel. |
+| 102 | Fusionlead | Clean |  | Chorused lead sound, натхненний такими, як Mike Stern. |
+| 103 | Clean Chorused Delay | Clean / Dirty |  | Reverb і Chorused Delay, що Chorus лише ваші long notes. |
+| 104 | Clean Ducked Swell | Clean |  | Dynamic Delays. |
+| 105 | Echocomplex | Clean / Dirty |  | Classic dull sound Echoplex із легким moving detune для flutter. |
+| 106 | Pedal Feed Delay | Clean / Dirty | **X** | Pedal to heel = no Delay / Pedal to toe = feeds the Delay input. |
+| 107 | Final Frontier | Clean |  | Добре для dream like application на clean sound. |
+| 108 | Wishey Wash Tap | Clean / Dirty |  | Fast subtle Phaser у detune і Dly/Verb wash + Chorus. Добре для clean chords, fuzzed lead. |
+| 109 | Twang Slap | Dirty | **X** | Подайте dirty setting. Chorus і Delay slap роблять звук wide і full. Добре для rhythm. |
+| 110 | Answering Echo | Clean / Dirty |  | Bryan May у Brighton Rock або Steve Vai на альбомі David Lee Roth's "Skyscraper". |
+| 111 | Wes M Jazz Lead | Clean | **X** | Для Octave lead jazz lines à la Wes Montgomery. |
+| 112 | Low Note Thicken | Clean |  | Pedal to heel = shimmering rhythm guitar / Pedal to toe = Added low octave. |
+| 113 | Pitch -12 and -5 | Dirty | **X** | Pedal to heel = Straight clean sound / Pedal to toe = two voice Pitch-shifting -12 and -5. |
+| 114 | C+W Diaton Solo in A | Clean / Dirty |  | Play single-note runs для миттєвих twangy Georgian C&W harmonies. Найкраще на higher strings. |
+| 115 | Eats Your Attack | Clean / Dirty |  | Envelope controlled input volume. Автоматично виконує Volume knob trick. |
+| 116 | Pedal Octave Down | Clean / Dirty | **X** | Pedal виконує Whammy down при heel. |
+| 117 | Pedal Octave Up | Clean / Dirty | **X** | Pedal виконує Whammy up при toe. |
+| 118 | Pitch Dm 5 and 3 | Clean / Dirty |  | Single note lead. Play у D-minor із third і fifth. |
+| 119 | Pedal Add Octave Up | Clean | **X** | Pedal to heel = crunchy lead sound, Pedal to toe = adds octave voice. |
+| 120 | Flanger Beautyverb | Clean |  | Dense, thick reverb із medium long decay через slow flanger. Добре для leads і chords. |
+| 121 | Verb Morphed to Dly | Clean / Dirty |  | Envelope controlled crossfade між Reverb і Delay. Reverb, коли ви граєте; Delay, коли зупиняєтеся. |
+| 122 | I've Been Drinking | Distorted | **X** | Pedal to heel = Phased guitar / Pedal to toe = Room spinning. |
+| 123 | Panner Pedal | Clean / Dirty | **X** | Pedal панорамує з left до right. |
+| 124 | Picking Style | Clean / Dirty |  | Input sensitive parallel Wah Filter, чудовий для picking guitar. |
+| 125 | Envelope Filter | Clean / Dirty |  | Envelope Filter effect. Input level threshold dependent. |
+| 126 | Nervosa Doubler | Clean / Dirty |  | Fluttery Phaser і Panning із Chorus і Pitch-shifter doubles. Добре для lead і chords. |
+| 127 | Blues Room | Clean |  | Добре для blues. |
+| 128 | Hammer to Fall | Clean |  | Totally dominant distorted main rhythm guitar sound, натхненний відомою піснею Queen. |
+| 129 | Iron Man | Clean |  | The Ultimate power chord sound. Metallica, saturated, ominous. Подивіться на назву — хіба треба щось ще? |
+| 130 | Thick'n Juicy Lead | Clean |  | Nice greasy lead. |
+| 131 | Smooth Tubedrive | Clean |  | Дає drive із loose bottom, знайомий із older tube amps. Добре для lead. |
+| 132 | Duckman Lead | Clean / Dirty |  | «Крякає» як duck завдяки Wah-Wah. Повертає 70's. |
+| 133 | Lead Pedal Wah | Clean | **X** | Подайте на G-Force clean tone і Wah away педаллю. Чудово для leads. |
+| 134 | Touch Wah Driven | Clean |  | Подайте на G-Force clean tone і Wah away picking power. Чудово для leads. |
+| 135 | Pedal liaahh | Dirty | **X** | Подайте на G-Force dirty tone і talk away педаллю. Дуже спеціальний lead sound. |
+| 136 | Driven Lead | Clean |  | Overdriven lead sound із octave shifter у big hall. |
+| 137 | Octavia Lead | Clean |  | Добре на distortion setting для wild "Yes" type solos. |
+
+### Wacky (138–179)
+
+| # | Preset | Tone | Pedal | Description |
+| :---: | :--- | :--- | :---: | :--- |
+| 138 | The Smiths | Clean |  | Wide tremolo sound поверх punchy distorted sound. Натхненний... здогадайтеся ким! |
+| 139 | Cyber Sci-fi Surfer | Clean |  | Fast Panning Chorus, sweeping Phaser і Pitch-shifter doubles у filtered slap Delays і very small Reverb. |
+| 140 | Steppers in Time | Clean / Dirty |  | Stepped Formant Filter, що крокує в часі з repeating Delays. Play along із Delay time для найкращого ефекту. |
+| 141 | Spaceyplace | Clean / Dirty | **X** | Slow echoes і big Reverb. Pedal контролює Phaser level. |
+| 142 | Bluebox Echophased | Clean |  | The kitchen sink: full fuzz, deep Phaser, pitch at -12 and -5, panned echo і Chorus. Добре на leads. |
+| 143 | Echoverb | Clean / Dirty |  | Smooth chorus, echo + long hall Verb — звучите як ECM artist. |
+| 144 | Duality Effects | Clean / Dirty | **X** | Два separate effect chains. Pedal контролює speed і level Phaser. |
+| 145 | Bowling Multitaps | Clean / Dirty |  | Play melodically в часі з echoes для fun і ввімкніть Drive для fuzzed sound. |
+| 146 | Slow Swell Pad | Clean / Dirty |  | Dreamy "attack free" sound для slow chord або melody passages. Input level dependent. |
+| 147 | Expandelay | Clean / Dirty |  | Перші чотири repeats стають increasingly louder, потім subsequent repeats зменшуються в volume. |
+| 148 | Infinity and Beyond | Clean / Dirty | **X** | Long Reverb і Delays. |
+| 149 | Deep Bass 9 | Clean |  | Highly compressed bass sound для ambient/Techno/TR303 emulation. |
+| 150 | Flange Pedal Speed | Clean / Dirty | **X** | Pedal контролює speed Flanger. |
+| 151 | Duck on Crack | Distorted | **X** | Pedal to heel = Moderately normal guitar / Pedal to toe = Dynamically contr. duck (1 Octave up). |
+| 152 | Sus4 Dreamscape | Clean / Dirty |  | Dual Shifters додають fourth і fifth, створюючи sus4 chord із Chorus, Delay і Reverb. |
+| 153 | Crazy Brown Lead | Clean / Dirty |  | Найкраще на leads. Shifter додає Octave up і down із crazed Pan і Phaser. Dynamic Delay. |
+| 154 | Eastern Ocean | Clean / Dirty | **X** | Dual shifters на 5th і octave above у chorus + very wet long Reverb. Добре для slow leads. |
+| 155 | Skysaw Doubler | Clean | **X** | Crashy fuzz у dual Pitch-shifters на octave up із sweeping high feedback Flanger. Чудово для leads. |
+| 156 | Synthesized Leads | Clean |  | Fuzz, pitched octave up і down у Compressor із Touchwah і slap Delays. Добре на soft leads. |
+| 157 | Sexwah Pedalead Fuzz | Clean | **X** | Complex distorted effect із octave + fifth у Chorus і tap Delays. Pedal контролює Formant filters. |
+| 158 | Industrial Mayhem | Clean / Dirty |  | Touchwah і low octave shifter. Input level dependent. |
+| 159 | Electric Church | Clean / Dirty |  | Removes your attack. Звучить synth-like. |
+| 160 | Trance Yer Ass Off | Clean / Dirty | **X** | Для single note lines. Використовуйте Ext. 1 для morph від Flanger до Detuned Octaver до Touchwah і навпаки. |
+| 161 | Owner Solo | Clean / Dirty |  | Створює guitar synth-like texture для over-the-top soloing. |
+| 162 | Double Fridge Solo | Clean / Dirty |  | Без G-Force, можливо, знадобилися б два racks gear для цього звуку. |
+| 163 | Tribute 2 Bootsy | Clean |  | Funky bass rig. |
+| 164 | War of the Worlds | Clean / Dirty |  | Play single note melodies для миттєвих cheesy Sci-fi tones. |
+| 165 | Inside Out Dyn Pan | Clean / Dirty |  | Slow Panner прискорюється, коли signal fades. |
+| 166 | Far Away Vibrato | Clean / Dirty |  | Ви «далеко» із Vibrato sound. |
+| 167 | Dynamic Lesley | Clean / Dirty |  | Крутиться fast із louder signals. |
+| 168 | Varispeed Phaser | Clean / Dirty |  | Цей Phaser постійно змінює speed. |
+| 169 | Dark Envelope Filter | Clean / Dirty |  | Compressed Envelope-Filtered Reverb. Input level dependent. |
+| 170 | Touch Wah + Octave | Clean / Dirty |  | По суті, саме те, що в назві. One octave up і Touchwah. |
+| 171 | Who's Next. | Clean / Dirty |  | Square Tremolo і Autowah. |
+| 172 | Broken Speaker | Clean / Dirty |  | Transistor radio guitar. |
+| 173 | Touch Res and Delay | Clean / Dirty | **X** | Input level dependent Resonance Filter і Delay. |
+| 174 | Jam With Loop | Clean / Dirty | **X** | Створіть 1000ms loop і jam over it. Ext. 1 контролює looping, Ext. 2 — adding loop/playing on top of the loop. |
+| 175 | Pedal Hold + Reverb | Clean / Dirty | **X** | Strike a chord, pedal to toe — і є nice background для play on. |
+| 176 | Very Scary Horror | Clean / Dirty | **X** | Push pedal back and forth під час play, але watch out for the Demons. |
+| 177 | Talking Whales | Clean / Dirty | **X** | Push pedal gently під час long sustaining notes і listen to the talking whales. |
+| 178 | Flyverb Ducker | Clean / Dirty |  | Heeellllp meee!!. Муха, що застрягла в звуку! Chorused doubled sound у long Reverb, shifted octave і Phaser. Good leads. |
+| 179 | Chord Stabs | Driven | **X** | Pedal to heel = Mono guitar signal / Pedal to toe = Stereo octave up. |
+
+### Block (180–225)
+
+| # | Preset | Tone | Pedal | Description |
+| :---: | :--- | :--- | :---: | :--- |
+| 180 | Bright Room | Clean / Dirty |  | Універсальний блок all-purpose Reverb Room. |
+| 181 | Church | Clean / Dirty |  | Універсальний блок all-purpose Church Reverb. |
+| 182 | Grand Hall | Clean / Dirty |  | Універсальний блок all-purpose Grand Hall Reverb. |
+| 183 | Cathedral | Clean / Dirty |  | Універсальний блок all-purpose Cathedral Reverb. |
+| 184 | Spring Reverb | Clean / Dirty |  | Універсальний блок all-purpose Spring Reverb. |
+| 185 | Slow Reverb | Clean / Dirty |  | Універсальний блок all-purpose slow-reacting Reverb. |
+| 186 | Chorus Straight | Clean / Dirty |  | Універсальний блок all-purpose straight Chorus. |
+| 187 | Chorus Straight Fast | Clean / Dirty |  | Універсальний блок all-purpose straight Chorus, трохи faster. |
+| 188 | Flanger Straight | Clean / Dirty |  | Універсальний блок all-purpose straight Flanger. |
+| 189 | Flanger Straight Fast | Clean / Dirty |  | Універсальний блок all-purpose straight Flanger, трохи faster. |
+| 190 | Vibrato | Clean / Dirty |  | Універсальний блок all-purpose Vibrato (100% Chorus). |
+| 191 | Classic Tremolo | Clean / Dirty |  | Універсальний блок all-purpose Classic Tremolo. |
+| 192 | Stereo Tremolo | Clean / Dirty |  | Універсальний блок all-purpose Tremolo, opposite у left і right. |
+| 193 | Square Tremolo | Clean / Dirty |  | Універсальний блок all-purpose Square Tremolo, також known as transforming. |
+| 194 | Stereo Pan Tap Tempo | Clean / Dirty |  | Універсальний блок all-purpose Panner. Tap the tempo, який вам потрібен. |
+| 195 | Surround Panner | Clean / Dirty |  | Універсальний блок all-purpose Panner, що pans past normal stereo image. |
+| 196 | Straight Delay | Clean / Dirty |  | Універсальний блок all-purpose 500ms Delay. |
+| 197 | Two Delays | Clean / Dirty |  | Універсальний блок all-purpose Delay. Left = 500ms / Right = 400ms. |
+| 198 | Tape Delay | Clean / Dirty |  | Універсальний блок all-purpose Highcut Filtered Delay, як old tape Delay. |
+| 199 | Triplet Ping-Pong | Clean / Dirty |  | Універсальний блок all-purpose Ping-Pong Delay. |
+| 200 | 4 Tap Delay Pedal | Clean / Dirty | **X** | Універсальний блок all-purpose 4-tap Delay. Pedal контролює mix level Delay. |
+| 201 | Dynamic Delay | Clean / Dirty |  | Універсальний блок all-purpose Delay. Input level dependent, plays when you stop playing. |
+| 202 | Soft Compressor | Clean / Dirty |  | Універсальний блок all-purpose Soft Compressor. |
+| 203 | Hard Compressor | Clean / Dirty |  | Універсальний блок all-purpose Hard Compressor. |
+| 204 | Limiter | Clean / Dirty |  | Універсальний блок all-purpose Limiter. |
+| 205 | Dual Detune Pedal | Clean / Dirty | **X** | Універсальний блок all-purpose Pitch Detune setting. Pedal контролює detuning Voice 1. |
+| 206 | Whammy Down | Clean / Dirty | **X** | Універсальний блок all-purpose octave down Pitch-shifter. Pedal контролює pitch. |
+| 207 | Whammy Up | Clean / Dirty | **X** | Універсальний блок all-purpose octave up Pitch-shifter. Pedal контролює pitch. |
+| 208 | G-major Pitch Pedal | Clean / Dirty | **X** | Single block із Intelligent Pitch-shifter для G-major. Pedal контролює level third. |
+| 209 | D-minor 5 and 3 | Clean / Dirty |  | Single block із Intelligent Pitch-shifter для D-minor із fifth і third. |
+| 210 | Octave Dubbing | Clean / Dirty |  | Single block із Octave down Pitch-shift. |
+| 211 | Phase Off | Clean / Dirty |  | Універсальний блок all-purpose Phaser. |
+| 212 | Phaser Pedal Speed | Clean / Dirty | **X** | Single block із another all-purpose Phaser. Pedal контролює speed Phaser. |
+| 213 | Clean Wah Pedal | Clean / Dirty | **X** | Універсальний блок all-purpose Wah Wah. Pedal контролює Wah frequency. |
+| 214 | Clean Touch-Wah | Clean / Dirty |  | Універсальний блок all-purpose Touchwah. Input level dependent. |
+| 215 | Clean Auto Wah | Clean / Dirty |  | Універсальний блок all-purpose Autowah. External LFO контролює Wah frequency. |
+| 216 | Formant Touch | Clean / Dirty |  | Універсальний блок all-purpose touch-sensitive Formant Filter. Input level dependent. |
+| 217 | Formant Pedal | Clean / Dirty | **X** | Універсальний блок all-purpose Formant Filter. Pedal контролює Formant frequency. |
+| 218 | Resonance Pedal | Clean / Dirty | **X** | Універсальний блок all-purpose Resonance Filter. Pedal контролює Resonance frequency. |
+| 219 | Auto Resonance | Clean / Dirty |  | Універсальний блок all-purpose Auto-Resonance Filter. External LFO контролює Resonance filter. |
+| 220 | Drive 1 | Clean / Dirty |  | Універсальний блок all-purpose Drive. |
+| 221 | Drive 2 | Clean / Dirty |  | Універсальний блок all-purpose Drive. |
+| 222 | Drive 3 | Clean / Dirty |  | Універсальний блок all-purpose Drive. |
+| 223 | Noise Gate Slow | Clean / Dirty |  | По суті, саме те, що в назві. |
+| 224 | Noise Gate Slow | Clean / Dirty |  | По суті, саме те, що в назві. |
+| 225 | Empty Routing | Clean / Dirty |  | Empty Routing — добре для початку створення власних presets. |
+
+**Pedal:** **X** = expression pedal preset

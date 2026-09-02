@@ -5,6 +5,7 @@ import { translations } from './translations.mjs';
 import { formatPageRange } from './format_text.mjs';
 import { isPanelLabel } from './brand.mjs';
 import { MANUAL_SECTIONS } from './manual-sections.mjs';
+import { presetsListMarkdown } from './presets-list-57.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.join(__dirname, 'manuals');
@@ -598,6 +599,10 @@ function injectManualAssets(markdown) {
     result = result.replace(
       /(- Переконайтеся, що G-Force налаштовано на правильний pedal type і педаль коректно калібрована в `Utility` menu\.)\n\n(?:## MIDI Implementation Chart\n\n[\s\S]*?\*\*Notes:\*\* O = ТАК \(YES\)[^\n]+\n\n)?(?:## Self Test\n\n)?(?:Function[\s\S]*?)(?:Notes[\s\S]*?(?:O:ТАК X:НІ|O:YES)[^\n]*\n\n)?(?:ДОСТУП ДО SELF-TEST[^\n]*\n\n)?(Обертайте `Value Wheel`)/,
       `$1\n\n## MIDI Implementation Chart\n\n${MIDI_IMPLEMENTATION_CHART}\n\n## Self Test\n\nДОСТУП ДО SELF-TEST І ВИБІР »RUN TEST PROGRAM«\n\n$2`
+    );
+    result = result.replace(
+      /(## Список presets\n\n)[\s\S]*$/,
+      `$1${presetsListMarkdown()}\n`
     );
 
   return result;
