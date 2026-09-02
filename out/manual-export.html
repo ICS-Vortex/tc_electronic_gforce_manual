@@ -465,16 +465,18 @@
       text-align: left;
       font-weight: 700;
       padding: 1.8mm 2.5mm 2.2mm;
-      border-bottom: 1px dotted #888;
+      border: none;
+      border-bottom: 1px solid #999;
       font-family: 'Segoe UI', Arial, sans-serif;
-      text-transform: none;
+      text-transform: uppercase;
       letter-spacing: normal;
       background: transparent;
     }
 
     .midi-chart-table td {
       padding: 1.4mm 2.5mm;
-      border-bottom: 1px dotted #c8c8c8;
+      border: none;
+      border-bottom: 1px solid #d6d6d6;
       vertical-align: top;
     }
 
@@ -497,7 +499,8 @@
     }
 
     .midi-chart-table tr.midi-section-divider td {
-      border-bottom: 1px dotted #666;
+      border: none;
+      border-bottom: 1px solid #999;
       padding: 0;
       height: 2.5mm;
       line-height: 0;
@@ -603,6 +606,39 @@
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    .section-main .midi-chart-table th,
+    .section-main .midi-chart-table td {
+      border: none;
+      border-bottom: 1px solid #d6d6d6;
+      padding: 1.4mm 2.5mm;
+      background: transparent;
+      text-align: left;
+    }
+
+    .section-main .midi-chart-table th {
+      border-bottom: 1px solid #999;
+      font-weight: 700;
+      font-size: 0.88rem;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      letter-spacing: normal;
+      text-transform: uppercase;
+    }
+
+    .section-main .midi-chart-table th:nth-child(2),
+    .section-main .midi-chart-table th:nth-child(3),
+    .section-main .midi-chart-table .midi-tx,
+    .section-main .midi-chart-table .midi-rx {
+      text-align: center;
+    }
+
+    .section-main .midi-chart-table tr.midi-section-divider td {
+      border: none;
+      border-bottom: 1px solid #999;
+      padding: 0;
+      height: 2.5mm;
+      line-height: 0;
     }
 
     .section-main img {
@@ -2556,12 +2592,12 @@ The Decay — це пізніша частина natural <code>reverb</code>, я
 
       <div class="section-header-inline">
         <div class="section-number">РОЗДІЛ 19</div>
-        <p class="section-summary">&lt;div class=&quot;midi-chart-page&quot;&gt;</p>
+        <p class="section-summary">Розділ «MIDI Implementation Chart» — практичні пояснення для TC Electronic G-Force.</p>
       </div>
 
       <div class="section-main">
         <h2 class="section-title">MIDI Implementation Chart</h2>
-        <div class="midi-chart-banner">MIDI IMPLEMENTATION CHART</div><p class="midi-chart-subtitle">EFFECTS PROCESSOR G-Force — May 23th, 1997 Version 1.0</p><table class="midi-chart-table">
+        <div class="midi-chart-page"><div class="midi-chart-banner">MIDI IMPLEMENTATION CHART</div><p class="midi-chart-subtitle">EFFECTS PROCESSOR G-Force — May 23th, 1997 Version 1.0</p><table class="midi-chart-table">
 <thead>
 <tr>
 <th>Function</th>
@@ -2782,12 +2818,12 @@ The Decay — це пізніша частина natural <code>reverb</code>, я
 
       <div class="section-header-inline">
         <div class="section-number">РОЗДІЛ 20</div>
-        <p class="section-summary">&lt;div class=&quot;self-test-page&quot;&gt;</p>
+        <p class="section-summary">Розділ «Self Test» — практичні пояснення для TC Electronic G-Force.</p>
       </div>
 
       <div class="section-main">
         <h2 class="section-title">Self Test</h2>
-        <p class="self-test-lead"><strong>НАТИСНІТЬ <code>OVERALL BYPASS</code> KEY ПІД ЧАС УВІМКНЕННЯ, ЩОБ ДОСТУПИТИСЯ SELF-TEST І ВИБРАТИ »RUN TEST PROGRAM«</strong></p><p class="self-test-intro"><em>Обертайте <code>Value Wheel</code> для переміщення між Self tests.</em></p><div class="self-test-columns">
+        <div class="self-test-page"><p class="self-test-lead"><strong>НАТИСНІТЬ <code>OVERALL BYPASS</code> KEY ПІД ЧАС УВІМКНЕННЯ, ЩОБ ДОСТУПИТИСЯ SELF-TEST І ВИБРАТИ »RUN TEST PROGRAM«</strong></p><p class="self-test-intro"><em>Обертайте <code>Value Wheel</code> для переміщення між Self tests.</em></p><div class="self-test-columns">
 <div class="self-test-col">
 <div class="self-test-item"><h4 class="content-h4">Key test</h4><p>Виберіть Key test, натиснувши <code>Enter</code>.</p>
 <p>Ключі мають бути натиснуті у порядку, який запитує G-Force, щоб пройти тест.</p>

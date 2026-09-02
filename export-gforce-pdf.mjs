@@ -363,7 +363,7 @@ function extractLeadParagraph(markdown) {
   }
 
   const firstLine = lines[index].trim();
-  if (/^(#|>|-|\*|\d+\.|\||```|!\[)/.test(firstLine)) {
+  if (/^(#|>|-|\*|\d+\.|\||```|!\[|<)/.test(firstLine)) {
     return { summary: '', remainder: markdown.trim() };
   }
 
@@ -1008,16 +1008,18 @@ function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skip
       text-align: left;
       font-weight: 700;
       padding: 1.8mm 2.5mm 2.2mm;
-      border-bottom: 1px dotted #888;
+      border: none;
+      border-bottom: 1px solid #999;
       font-family: 'Segoe UI', Arial, sans-serif;
-      text-transform: none;
+      text-transform: uppercase;
       letter-spacing: normal;
       background: transparent;
     }
 
     .midi-chart-table td {
       padding: 1.4mm 2.5mm;
-      border-bottom: 1px dotted #c8c8c8;
+      border: none;
+      border-bottom: 1px solid #d6d6d6;
       vertical-align: top;
     }
 
@@ -1040,7 +1042,8 @@ function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skip
     }
 
     .midi-chart-table tr.midi-section-divider td {
-      border-bottom: 1px dotted #666;
+      border: none;
+      border-bottom: 1px solid #999;
       padding: 0;
       height: 2.5mm;
       line-height: 0;
@@ -1146,6 +1149,39 @@ function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skip
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    .section-main .midi-chart-table th,
+    .section-main .midi-chart-table td {
+      border: none;
+      border-bottom: 1px solid #d6d6d6;
+      padding: 1.4mm 2.5mm;
+      background: transparent;
+      text-align: left;
+    }
+
+    .section-main .midi-chart-table th {
+      border-bottom: 1px solid #999;
+      font-weight: 700;
+      font-size: 0.88rem;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      letter-spacing: normal;
+      text-transform: uppercase;
+    }
+
+    .section-main .midi-chart-table th:nth-child(2),
+    .section-main .midi-chart-table th:nth-child(3),
+    .section-main .midi-chart-table .midi-tx,
+    .section-main .midi-chart-table .midi-rx {
+      text-align: center;
+    }
+
+    .section-main .midi-chart-table tr.midi-section-divider td {
+      border: none;
+      border-bottom: 1px solid #999;
+      padding: 0;
+      height: 2.5mm;
+      line-height: 0;
     }
 
     .section-main img {
