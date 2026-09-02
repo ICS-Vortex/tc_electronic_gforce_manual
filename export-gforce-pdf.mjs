@@ -212,9 +212,36 @@ async function fileToDataUrl(filePath) {
     ? 'image/png'
     : extension === '.jpg' || extension === '.jpeg'
       ? 'image/jpeg'
-      : 'application/octet-stream';
+      : extension === '.svg'
+        ? 'image/svg+xml'
+        : 'application/octet-stream';
 
   return `data:${mimeType};base64,${buffer.toString('base64')}`;
+}
+
+async function embedMarkdownImages(markdown, baseDir) {
+  const imageRe = /!\[([^\]]*)\]\(([^)]+)\)/g;
+  let result = markdown;
+  const matches = [...markdown.matchAll(imageRe)];
+
+  for (const match of matches) {
+    const [full, alt, src] = match;
+    if (/^(?:https?:|data:|file:)/i.test(src)) {
+      continue;
+    }
+
+    const absPath = path.resolve(baseDir, src);
+    try {
+      await fs.access(absPath);
+      const fileUrl = pathToFileURL(absPath).href;
+      result = result.replace(full, `![${alt}](${fileUrl})`);
+    }
+    catch {
+      console.warn('Missing image:', absPath);
+    }
+  }
+
+  return result;
 }
 
 function extractToc(markdown) {
@@ -342,7 +369,7 @@ function extractLeadParagraph(markdown) {
   }
 
   const firstLine = lines[index].trim();
-  if (/^(#|>|-|\*|\d+\.|\||```)/.test(firstLine)) {
+  if (/^(#|>|-|\*|\d+\.|\||```|!\[)/.test(firstLine)) {
     return { summary: '', remainder: markdown.trim() };
   }
 
@@ -396,8 +423,19 @@ function injectHeadingAnchors(markdown) {
   }).join('\n');
 }
 
+function sectionStartsWithImage(markdown) {
+  const line = markdown.split(/\r?\n/).find((l) => l.trim())?.trim() ?? '';
+  return /^!\[/.test(line);
+}
+
+function markdownImagesToHtml(markdown) {
+  return markdown.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
+    return `<img alt="${escapeHtml(alt)}" src="${src}" />`;
+  });
+}
+
 function formatManualHtml(markdown) {
-  return marked.parse(injectHeadingAnchors(markdown))
+  return marked.parse(markdownImagesToHtml(injectHeadingAnchors(markdown)))
     .replace(/<h3>/g, '<h3 class="content-h3">')
     .replace(/<h4>/g, '<h4 class="content-h4">');
 }
@@ -474,6 +512,13 @@ function buildSectionHtml(sections) {
     const bodyHtml = formatManualHtml(bodyMarkdown);
     const bandTitle = splitTitleForBand(section.title);
     const summaryText = summary || labels.sectionSummaryFallback(section.title);
+    const startsWithImage = sectionStartsWithImage(section.markdown);
+    const headerInline = startsWithImage
+      ? ''
+      : `<div class="section-header-inline">
+        <div class="section-number">${escapeHtml(labels.sectionLabel.toUpperCase())} ${String(index + 1).padStart(2, '0')}</div>
+        <p class="section-summary">${escapeHtml(summaryText)}</p>
+      </div>`;
 
     return `<section class="manual-section" id="${slugify(section.title)}">
       <div class="section-band">
@@ -481,10 +526,7 @@ function buildSectionHtml(sections) {
         <span class="section-band-minor">${escapeHtml(bandTitle.minor)}</span>
       </div>
 
-      <div class="section-header-inline">
-        <div class="section-number">${escapeHtml(labels.sectionLabel.toUpperCase())} ${String(index + 1).padStart(2, '0')}</div>
-        <p class="section-summary">${escapeHtml(summaryText)}</p>
-      </div>
+      ${headerInline}
 
       <div class="section-main">
         <h2 class="section-title">${escapeHtml(section.title)}</h2>
@@ -1019,7 +1061,8 @@ async function main() {
   );
   marked = markedModule.marked ?? markedModule.default;
 
-  const markdown = await fs.readFile(inputPath, 'utf8');
+  const markdownRaw = await fs.readFile(inputPath, 'utf8');
+  const markdown = await embedMarkdownImages(markdownRaw, path.dirname(inputPath));
   const extractedLogoPath = path.resolve(repoRoot, 'artifacts/brandguide-preview/brand-logo-horizontal-final.png');
   const fallbackLogoPath = path.resolve(repoRoot, 'logo.png');
   let logoDataUrl;
@@ -1052,15 +1095,20 @@ async function main() {
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
 
+  const htmlPath = path.join(path.dirname(outputPath), 'manual-export.html');
+  await fs.writeFile(htmlPath, html, 'utf8');
+
   const browser = await puppeteer.launch({
     executablePath: browserPath,
     headless: true,
-    args: ['--no-sandbox', '--disable-dev-shm-usage'],
+    args: ['--no-sandbox', '--disable-dev-shm-usage', '--allow-file-access-from-files'],
   });
 
   try {
     const page = await browser.newPage();
-    await page.setContent(html, { waitUntil: 'networkidle0' });
+    page.setDefaultTimeout(180000);
+    page.setDefaultNavigationTimeout(180000);
+    await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0', timeout: 180000 });
     await page.pdf({
       path: outputPath,
       format: 'A4',

@@ -1,10 +1,7 @@
 /** Логічні розділи посібника (оригінальні стор. 3–5 і 7–63; стор. 6 — ілюстрація в PDF). */
-export const PART1_SECTIONS = [
+export const MANUAL_SECTIONS = [
   { title: 'Безпека та нормативні вимоги', from: 3, to: 4 },
   { title: 'Про цей посібник', from: 5, to: 5, custom: 'toc' },
-];
-
-export const PART2_SECTIONS = [
   { title: 'Вітаємо', from: 7, to: 8 },
   { title: 'Короткий посилання', from: 9, to: 9 },
   { title: 'Передня панель', from: 10, to: 11 },

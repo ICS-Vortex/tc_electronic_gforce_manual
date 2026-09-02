@@ -8,8 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(__dirname, 'source', 'tc_electronic_g_force.PDF');
 const OUT = path.join(__dirname, 'tc_electronic_g_force_UA.pdf');
 const OUT_DIR = path.join(__dirname, 'out');
-const PART1_MD = path.join(__dirname, 'manuals', 'GForce.ua.part1.md');
-const PART2_MD = path.join(__dirname, 'manuals', 'GForce.ua.part2.md');
+const MANUAL_MD = path.join(__dirname, 'manuals', 'GForce.ua.md');
 const EXPORT = path.join(__dirname, 'export-gforce-pdf.mjs');
 
 async function mergePdfs(parts, outPath) {
@@ -36,18 +35,11 @@ async function main() {
   console.log('Generating Markdown...');
   execSync('node generate-md.mjs', { cwd: __dirname, stdio: 'inherit' });
 
-  const part1Pdf = path.join(OUT_DIR, 'part1.pdf');
-  const part2Pdf = path.join(OUT_DIR, 'part2.pdf');
+  const manualPdf = path.join(OUT_DIR, 'manual.pdf');
 
-  console.log('Exporting part1 PDF (cover + TOC)...');
+  console.log('Exporting manual PDF...');
   execSync(
-    `node "${EXPORT}" "${PART1_MD}" "${part1Pdf}" "TC Electronic G-Force"`,
-    { cwd: __dirname, stdio: 'inherit' }
-  );
-
-  console.log('Exporting part2 PDF (content)...');
-  execSync(
-    `node "${EXPORT}" "${PART2_MD}" "${part2Pdf}" "TC Electronic G-Force" --content-only`,
+    `node "${EXPORT}" "${MANUAL_MD}" "${manualPdf}" "TC Electronic G-Force"`,
     { cwd: __dirname, stdio: 'inherit' }
   );
 
@@ -55,7 +47,6 @@ async function main() {
   const srcPdf = await PDFDocument.load(srcBytes);
   const cover1 = path.join(OUT_DIR, 'orig-cover1.pdf');
   const cover2 = path.join(OUT_DIR, 'orig-cover2.pdf');
-  const imagePage = path.join(OUT_DIR, 'orig-page6.pdf');
 
   const tmp1 = await PDFDocument.create();
   tmp1.addPage((await tmp1.copyPages(srcPdf, [0]))[0]);
@@ -65,11 +56,7 @@ async function main() {
   tmp2.addPage((await tmp2.copyPages(srcPdf, [1]))[0]);
   fs.writeFileSync(cover2, await tmp2.save());
 
-  const tmp6 = await PDFDocument.create();
-  tmp6.addPage((await tmp6.copyPages(srcPdf, [5]))[0]);
-  fs.writeFileSync(imagePage, await tmp6.save());
-
-  await mergePdfs([cover1, cover2, part1Pdf, imagePage, part2Pdf], OUT);
+  await mergePdfs([cover1, cover2, manualPdf], OUT);
 }
 
 main().catch((err) => {
