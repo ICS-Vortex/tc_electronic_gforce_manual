@@ -6,6 +6,8 @@ import { formatPageRange } from './format_text.mjs';
 import { isPanelLabel } from './brand.mjs';
 import { MANUAL_SECTIONS } from './manual-sections.mjs';
 import { presetsListMarkdown } from './presets-list-57.mjs';
+import { selfTestMarkdown } from './self-test-page.mjs';
+import { midiImplementationChartMarkdown } from './midi-implementation-chart.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.join(__dirname, 'manuals');
@@ -116,7 +118,7 @@ const MANUAL_IMAGES = {
   effectsRouting: '![Дисплей Effects — Routing](images/effects-routing.png)',
   effectsMix: '![Дисплей Effects — Mix](images/effects-mix.png)',
   ioSetupAudio: '![Дисплей I/O Setup — Audio, Input selector, Killdry](images/io-setup-audio.png)',
-  modifiersOverview: '![Modifiers — Utilities, Effects та MIDI & Pedal](images/modifiers-overview.png)',
+  modifiersOverview: '![Налаштування Expression Pedal — Utilities, Effects та Modifiers](images/modifiers-overview.png)',
   modifierMatrix: '![Modifier Matrix — Cursor, Connection Point, Parameter List](images/modifier-matrix.png)',
   modifierLink: '![Дисплей Link — Curve, Low/Mid/High input та Slope](images/modifier-link.png)',
   modifiersDisplay: '![Дисплей Modifiers — Envelope, ADSR, LFO та Pitch](images/modifiers-display.png)',
@@ -268,46 +270,6 @@ const TECHNICAL_SPECS_MARKDOWN = `**Analog Inputs**
 
 > **NOTE:** У зв'язку з постійним розвитком і стандартизацією всі специфікації можуть змінюватися без повідомлення.`;
 
-const MIDI_IMPLEMENTATION_CHART = `**EFFECTS PROCESSOR G-Force** — May 23th, 1997 Version 1.0
-
-| Function | Transmitted | Recognized | Remarks |
-| :--- | :---: | :---: | :--- |
-| **Basic Channel** | | | |
-| Default | 1 | 1 | |
-| Changed | 1-16 | 1-16 | |
-| **Mode** | | | |
-| Default | | | |
-| Messages | X | X | |
-| Altered | | | |
-| **Note Number** | X | O | |
-| True Voice | X | X | |
-| **Velocity** | | | |
-| Note ON | X | X | |
-| Note OFF | X | X | |
-| **After Touch** | | | |
-| Key's | X | O | |
-| Ch's | X | X | |
-| **Pitch Bend** | X | O | |
-| **Control Change** | 0-127 | 0-127 | |
-| **Prog Change** | O | O | |
-| True # | 0-127 | 0-127 | |
-| **System Exclusive** | O | O | Bulkdump |
-| **Common** | | | |
-| :Song Pos | X | X | |
-| :Song Sel | X | X | |
-| :Tune | X | X | |
-| **System real time** | | | |
-| :Clock | X | X | |
-| :Commands | X | X | |
-| **Aux Messages** | | | |
-| :Local ON/OFF | X | X | |
-| :All Notes OFF | X | X | |
-| :Active Sense | X | X | |
-| :Reset | X | X | |
-| **Notes** | | | |
-
-**Notes:** O = ТАК (YES) &nbsp;·&nbsp; X = НІ (NO)`;
-
 function tocSectionMarkdown() {
   return `Цей посібник описує кнопки, ручки, контролери, входи та виходи, створення User preset, підключення Modifiers, налаштування Expression pedal, виклик і збереження preset, I/O, MIDI та системні параметри.
 
@@ -417,7 +379,7 @@ function injectManualAssets(markdown) {
       `$1\n\nБазовий потік внутрішніх і зовнішніх контролерів пояснюється в цьому розділі.\n\n`
     );
     result = result.replace(
-      /(### Setting up an Expression pedal\n\n)(?:(?:!\[Modifiers[^\n]+\n\n)|(?:\*\*ПРИМІТКА:\*\*[^\n]+\n\n))*(### Приклад:|Ви хочете під’єднати)/,
+      /(### (?:Setting up an Expression pedal|Налаштування Expression Pedal)\n\n)(?:(?:!\[[^\n]+\]\(images\/modifiers-overview\.png\)\n\n)|(?:!\[Modifiers[^\n]+\n\n)|(?:\*\*ПРИМІТКА:\*\*[^\n]+\n\n))*(### Приклад:|Ви хочете під’єднати)/,
       `$1${MANUAL_IMAGES.modifiersOverview}\n\n**ПРИМІТКА:** Якщо параметр не реагує правильно, спробуйте відкалібрувати педаль (див. \`Utility\`, Pedal Calibration).\n\n$2`
     );
     result = result.replace(
@@ -597,8 +559,12 @@ function injectManualAssets(markdown) {
       `$1## Технічні характеристики\n\n${TECHNICAL_SPECS_MARKDOWN}\n\n## Усунення несправностей та MIDI\n\n`
     );
     result = result.replace(
-      /(- Переконайтеся, що G-Force налаштовано на правильний pedal type і педаль коректно калібрована в `Utility` menu\.)\n\n(?:## MIDI Implementation Chart\n\n[\s\S]*?\*\*Notes:\*\* O = ТАК \(YES\)[^\n]+\n\n)?(?:## Self Test\n\n)?(?:Function[\s\S]*?)(?:Notes[\s\S]*?(?:O:ТАК X:НІ|O:YES)[^\n]*\n\n)?(?:ДОСТУП ДО SELF-TEST[^\n]*\n\n)?(Обертайте `Value Wheel`)/,
-      `$1\n\n## MIDI Implementation Chart\n\n${MIDI_IMPLEMENTATION_CHART}\n\n## Self Test\n\nДОСТУП ДО SELF-TEST І ВИБІР »RUN TEST PROGRAM«\n\n$2`
+      /(- Переконайтеся, що G-Force налаштовано на правильний pedal type і педаль коректно калібрована в `Utility` menu\.)\n\n(?:## MIDI Implementation Chart\n\n[\s\S]*?)?(?:## Self Test\n\n)?(?:Function[\s\S]*?)(?:Notes[\s\S]*?(?:O:ТАК X:НІ|O:YES)[^\n]*\n\n)?(?:ДОСТУП ДО SELF-TEST[^\n]*\n\n)?(?:Обертайте `Value Wheel`[\s\S]*?|<div class="self-test-page">[\s\S]*?)(?=## Список presets)/,
+      `$1\n\n## MIDI Implementation Chart\n\n${midiImplementationChartMarkdown()}\n\n## Self Test\n\n`
+    );
+    result = result.replace(
+      /(## Self Test\n\n)(?=## Список presets)/,
+      `$1${selfTestMarkdown()}\n\n`
     );
     result = result.replace(
       /(## Список presets\n\n)[\s\S]*$/,

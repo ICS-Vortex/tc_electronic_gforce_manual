@@ -14,9 +14,18 @@ let marked;
 
 const [inputArg, outputArg, titleArg, ...rest] = process.argv.slice(2);
 const contentOnly = rest.includes('--content-only');
+const skipCover = contentOnly || rest.includes('--skip-cover');
+const skipPrintedToc = rest.includes('--skip-printed-toc');
+const skipSections = [
+  ...rest
+    .filter((arg) => arg.startsWith('--skip-section='))
+    .map((arg) => arg.slice('--skip-section='.length).trim())
+    .filter(Boolean),
+  ...(skipPrintedToc ? ['Про цей посібник'] : []),
+];
 
 if (!inputArg || !outputArg) {
-  console.error('Usage: node export-gforce-pdf.mjs <input.md> <output.pdf> [title] [--content-only]');
+  console.error('Usage: node export-gforce-pdf.mjs <input.md> <output.pdf> [title] [--content-only] [--skip-cover] [--skip-printed-toc] [--skip-section=Title]');
   process.exit(1);
 }
 
@@ -38,23 +47,22 @@ const labelsByLocale = {
     generated: 'Generated',
     contentsIntro: 'This table of contents contains clickable links that jump to each section inside the PDF.',
     contentsSupport: 'Primary sections are listed first, followed by operational subsections for faster navigation.',
-    brandAlignedExport: 'VIRPIL Controls brand-aligned export',
+    brandAlignedExport: 'Print-ready export',
     sectionLabel: 'Section',
     catalogNote: 'Catalog-style operational reference',
     coverDescription: 'Daily operation, simulator integration setup, profile management, rule editing, telemetry diagnostics, and recovery workflow.',
     coverLeadFallback: 'A practical operational reference for telemetry setup, profile editing, rule authoring, diagnostics, and day-to-day LinkTool usage.',
-    coverSupportFallback: 'Prepared as a print-ready document aligned to current VIRPIL Controls branding rules.',
     keylines: [
       ['Telemetry', 'Source setup and validation'],
       ['Profiles', 'Create, open, save, and test rule sets'],
       ['Rules', 'Build, troubleshoot, and verify LED logic'],
       ['Diagnostics', 'Isolate device, runtime, and simulator issues'],
     ],
-    footerTitle: 'VIRPIL Controls LinkTool User Guide',
+    footerTitle: 'LinkTool User Guide',
     sectionFallbackMajor: 'SECTION',
     sectionFallbackMinor: '',
     sectionSingleWordMinor: 'SECTION',
-    sectionSummaryFallback: title => `${title} guidance and operational notes for VIRPIL Controls LinkTool.`,
+    sectionSummaryFallback: title => `${title} guidance and operational notes for LinkTool.`,
   },
   ua: {
     manualBandMajor: 'G-FORCE',
@@ -68,19 +76,19 @@ const labelsByLocale = {
     generated: 'Сформовано',
     contentsIntro: 'Зміст містить клікабельні посилання на розділи внутрішнього PDF.',
     contentsSupport: 'Основні розділи згруповані для швидшої навігації.',
-    brandAlignedExport: 'VIRPIL Controls brand-aligned export',
+    brandAlignedExport: 'Документ для друку',
     sectionLabel: 'Розділ',
     catalogNote: 'Операційний посібник',
     coverDescription: 'Український переклад посібника TC Electronic G-Force. Назви меню, кнопок і параметрів залишені англійською.',
     coverLeadFallback: 'Практичний посібник з налаштування ефектів, presets, Routing, Modifiers, I/O та MIDI для G-Force.',
-    coverSupportFallback: 'Документ для друку, оформлений згідно з бренд-гайдом VIRPIL Controls.',
+    coverSupportFallback: 'Документ для друку.',
     keylines: [
       ['Effects', 'Routing, блоки та редагування'],
       ['Presets', 'Recall, Store та User bank'],
       ['Modifiers', 'Matrix, педалі та MIDI'],
       ['I/O', 'Audio, MIDI та Utility'],
     ],
-    footerTitle: 'TC Electronic G-Force — UA Manual',
+    footerTitle: 'TC Electronic G-Force',
     sectionFallbackMajor: 'РОЗДІЛ',
     sectionFallbackMinor: '',
     sectionSingleWordMinor: 'РОЗДІЛ',
@@ -98,23 +106,23 @@ const labelsByLocale = {
     generated: 'Сформировано',
     contentsIntro: 'Это оглавление содержит кликабельные ссылки, которые переводят к нужному разделу внутри PDF.',
     contentsSupport: 'Сначала идут основные разделы, затем вложенные рабочие подразделы для быстрой навигации.',
-    brandAlignedExport: 'VIRPIL Controls brand-aligned export',
+    brandAlignedExport: 'Документ для друку',
     sectionLabel: 'Раздел',
     catalogNote: 'Каталожный эксплуатационный формат',
     coverDescription: 'Повседневная работа, настройка интеграций симуляторов, управление профилями, редактор правил, диагностика телеметрии и сценарии восстановления.',
     coverLeadFallback: 'Практическое эксплуатационное руководство по настройке телеметрии, работе с профилями, созданию правил, диагностике и повседневному использованию LinkTool.',
-    coverSupportFallback: 'Подготовлено как печатный документ, выровненный под актуальные правила брендинга VIRPIL Controls.',
+    coverSupportFallback: 'Подготовлено как печатный документ.',
     keylines: [
       ['Телеметрия', 'Настройка источников и проверка данных'],
       ['Профили', 'Создание, открытие, сохранение и тестирование правил'],
       ['Правила', 'Настройка и проверка LED-логики'],
       ['Диагностика', 'Поиск проблем устройств, рантайма и симуляторов'],
     ],
-    footerTitle: 'VIRPIL Controls LinkTool Руководство',
+    footerTitle: 'LinkTool Руководство',
     sectionFallbackMajor: 'РАЗДЕЛ',
     sectionFallbackMinor: '',
     sectionSingleWordMinor: 'РАЗДЕЛ',
-    sectionSummaryFallback: title => `Раздел «${title}» с практическими пояснениями по работе в VIRPIL Controls LinkTool.`,
+    sectionSummaryFallback: title => `Раздел «${title}» с практическими пояснениями по работе в LinkTool.`,
   },
   fr: {
     manualBandMajor: 'LINKTOOL',
@@ -128,23 +136,23 @@ const labelsByLocale = {
     generated: 'Généré le',
     contentsIntro: 'Cette table des matières contient des liens cliquables vers chaque section du PDF.',
     contentsSupport: 'Les sections principales sont listées en premier, suivies des sous-sections opérationnelles pour une navigation plus rapide.',
-    brandAlignedExport: 'Export aligné sur la marque VIRPIL Controls',
+    brandAlignedExport: 'Export prêt à l\'impression',
     sectionLabel: 'Section',
     catalogNote: 'Référence opérationnelle de type catalogue',
     coverDescription: 'Utilisation quotidienne, configuration des intégrations simulateur, gestion des profils, édition des règles, diagnostic télémétrie et procédures de récupération.',
     coverLeadFallback: 'Référence opérationnelle pratique pour la télémétrie, les profils, les règles LED, le diagnostic et l\'utilisation quotidienne de LinkTool.',
-    coverSupportFallback: 'Document prêt à l\'impression, aligné sur les règles de marque VIRPIL Controls en vigueur.',
+    coverSupportFallback: 'Document prêt à l\'impression.',
     keylines: [
       ['Télémétrie', 'Configuration des sources et validation'],
       ['Profils', 'Créer, ouvrir, enregistrer et tester les règles'],
       ['Règles', 'Configurer, dépanner et vérifier la logique LED'],
       ['Diagnostics', 'Isoler les problèmes périphérique, runtime et simulateur'],
     ],
-    footerTitle: 'VIRPIL Controls LinkTool Guide utilisateur',
+    footerTitle: 'LinkTool Guide utilisateur',
     sectionFallbackMajor: 'SECTION',
     sectionFallbackMinor: '',
     sectionSingleWordMinor: 'SECTION',
-    sectionSummaryFallback: title => `Section « ${title} » — notes opérationnelles pour VIRPIL Controls LinkTool.`,
+    sectionSummaryFallback: title => `Section « ${title} » — notes opérationnelles pour LinkTool.`,
   },
 };
 
@@ -203,20 +211,6 @@ function escapeHtml(text) {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
-}
-
-async function fileToDataUrl(filePath) {
-  const buffer = await fs.readFile(filePath);
-  const extension = path.extname(filePath).toLowerCase();
-  const mimeType = extension === '.png'
-    ? 'image/png'
-    : extension === '.jpg' || extension === '.jpeg'
-      ? 'image/jpeg'
-      : extension === '.svg'
-        ? 'image/svg+xml'
-        : 'application/octet-stream';
-
-  return `data:${mimeType};base64,${buffer.toString('base64')}`;
 }
 
 async function embedMarkdownImages(markdown, baseDir) {
@@ -440,16 +434,15 @@ function formatManualHtml(markdown) {
     .replace(/<h4>/g, '<h4 class="content-h4">');
 }
 
-function buildCoverHtml({ title, introParagraphs, logoDataUrl }) {
+function buildCoverHtml({ title, introParagraphs }) {
   const leadParagraph = introParagraphs[0]
     || labels.coverLeadFallback;
 
   return `<section class="cover-page">
     <div class="page-shell cover-shell">
       <div class="cover-topline">
-        <img class="cover-logo" src="${logoDataUrl}" alt="VIRPIL Controls" />
         <div class="cover-topmeta">
-          <span>VIRPIL CONTROLS</span>
+          <span>TC Electronic</span>
           <span>${escapeHtml(generatedOn)}</span>
         </div>
       </div>
@@ -536,7 +529,7 @@ function buildSectionHtml(sections) {
   }).join('');
 }
 
-function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, skipFrontMatter = false }) {
+function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skipCoverPage = false, skipToc = false }) {
   const oswald300 = toFileUrl(path.resolve(repoRoot, 'node_modules/@fontsource/oswald/files/oswald-latin-300-normal.woff2'));
   const oswald400 = toFileUrl(path.resolve(repoRoot, 'node_modules/@fontsource/oswald/files/oswald-latin-400-normal.woff2'));
   const oswald500 = toFileUrl(path.resolve(repoRoot, 'node_modules/@fontsource/oswald/files/oswald-latin-500-normal.woff2'));
@@ -556,14 +549,14 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
   <title>${escapeHtml(title)}</title>
   <style>
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 300;
       src: url('${oswald300}') format('woff2');
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 300;
       src: url('${oswaldCyr300}') format('woff2');
@@ -571,14 +564,14 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 400;
       src: url('${oswald400}') format('woff2');
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 400;
       src: url('${oswaldCyr400}') format('woff2');
@@ -586,14 +579,14 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 500;
       src: url('${oswald500}') format('woff2');
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 500;
       src: url('${oswaldCyr500}') format('woff2');
@@ -601,14 +594,14 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 600;
       src: url('${oswald600}') format('woff2');
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 600;
       src: url('${oswaldCyr600}') format('woff2');
@@ -616,14 +609,14 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 700;
       src: url('${oswald700}') format('woff2');
     }
 
     @font-face {
-      font-family: 'VirpilManual';
+      font-family: 'ManualTitle';
       font-style: normal;
       font-weight: 700;
       src: url('${oswaldCyr700}') format('woff2');
@@ -675,7 +668,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
 
     .cover-topline {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: flex-start;
       margin: 0 0 6mm;
     }
@@ -686,18 +679,11 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
       align-items: flex-end;
       gap: 1mm;
       font-size: 0.82rem;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 400;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--brand-light-grey);
-    }
-
-    .cover-logo {
-      width: 175px;
-      height: auto;
-      display: block;
-      margin-top: 2mm;
     }
 
     .section-band {
@@ -714,7 +700,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     }
 
     .section-band-major {
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-size: 2.25rem;
       line-height: 0.92;
       font-weight: 700;
@@ -724,7 +710,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     }
 
     .section-band-minor {
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       align-self: center;
       font-size: 0.98rem;
       line-height: 1;
@@ -740,7 +726,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     }
 
     .cover-kicker {
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-size: 0.86rem;
       font-weight: 400;
       letter-spacing: 0.22em;
@@ -753,7 +739,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
       margin: 0 0 5mm;
       font-size: 2.25rem;
       line-height: 0.95;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 700;
       letter-spacing: 0.02em;
       text-transform: uppercase;
@@ -799,7 +785,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     }
 
     .cover-keyline span:first-child {
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       color: var(--brand-red);
       font-size: 0.9rem;
       font-weight: 600;
@@ -817,7 +803,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
       display: block;
       color: var(--brand-light-grey);
       font-size: 0.7rem;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 400;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -862,7 +848,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
       margin: 0 0 5mm;
       font-size: 2.1rem;
       line-height: 0.98;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -886,7 +872,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
 
     .toc-item-h2 {
       font-size: 0.96rem;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 500;
       color: var(--brand-black);
       letter-spacing: 0.06em;
@@ -895,7 +881,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
 
     .toc-item-h3 {
       font-size: 0.84rem;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 400;
       color: var(--brand-dark-grey);
       padding-left: 4mm;
@@ -912,7 +898,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
     .section-number {
       color: var(--brand-red);
       font-size: 0.78rem;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -938,6 +924,133 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
       padding-left: 1mm;
     }
 
+    .self-test-page {
+      margin-top: 1mm;
+    }
+
+    .self-test-lead {
+      margin: 0 0 3mm !important;
+      font-size: 0.9rem !important;
+      line-height: 1.35;
+    }
+
+    .self-test-intro {
+      margin: 0 0 5mm !important;
+      font-size: 0.92rem !important;
+    }
+
+    .self-test-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+      align-items: start;
+    }
+
+    .self-test-col {
+      min-width: 0;
+    }
+
+    .self-test-item {
+      break-inside: avoid;
+      margin: 0 0 4.5mm;
+    }
+
+    .self-test-item h4 {
+      margin: 0 0 1.8mm;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--brand-black);
+      text-transform: none;
+    }
+
+    .self-test-item p {
+      margin: 0 0 2mm !important;
+      font-size: 0.88rem !important;
+      line-height: 1.4;
+    }
+
+    .self-test-footer {
+      margin: 3mm 0 0 !important;
+      font-size: 0.88rem !important;
+      text-align: right;
+    }
+
+    .midi-chart-page {
+      margin-top: 1mm;
+    }
+
+    .midi-chart-banner {
+      background: #2a2a2a;
+      color: var(--brand-white);
+      padding: 3.2mm 4.5mm;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .midi-chart-subtitle {
+      margin: 3.5mm 0 4mm !important;
+      font-size: 0.92rem !important;
+    }
+
+    .midi-chart-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    .midi-chart-table th {
+      text-align: left;
+      font-weight: 700;
+      padding: 1.8mm 2.5mm 2.2mm;
+      border-bottom: 1px dotted #888;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      text-transform: none;
+      letter-spacing: normal;
+      background: transparent;
+    }
+
+    .midi-chart-table td {
+      padding: 1.4mm 2.5mm;
+      border-bottom: 1px dotted #c8c8c8;
+      vertical-align: top;
+    }
+
+    .midi-chart-table .midi-tx,
+    .midi-chart-table .midi-rx {
+      text-align: center;
+      width: 20%;
+    }
+
+    .midi-chart-table .midi-remarks {
+      width: 18%;
+    }
+
+    .midi-chart-table .midi-fn-main {
+      font-weight: 700;
+    }
+
+    .midi-chart-table .midi-fn-sub {
+      padding-left: 7mm;
+    }
+
+    .midi-chart-table tr.midi-section-divider td {
+      border-bottom: 1px dotted #666;
+      padding: 0;
+      height: 2.5mm;
+      line-height: 0;
+    }
+
+    .midi-chart-legend {
+      margin: 4.5mm 0 0 !important;
+      font-size: 0.88rem !important;
+    }
+
     .section-main ul li::marker,
     .section-main ol li::marker {
       color: var(--brand-red);
@@ -949,7 +1062,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
       margin: 8mm 0 3mm;
       font-size: 1.2rem;
       line-height: 1;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -961,7 +1074,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
       margin: 5mm 0 2mm;
       font-size: 0.98rem;
       line-height: 1.1;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 400;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -1029,7 +1142,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
       background: var(--brand-lightest-grey);
       color: var(--brand-black);
       font-size: 0.78rem;
-      font-family: 'VirpilManual', 'Arial Narrow', sans-serif;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -1048,8 +1161,8 @@ function buildHtml({ title, tocItems, sections, introParagraphs, logoDataUrl, sk
   </style>
 </head>
 <body>
-  ${skipFrontMatter ? '' : buildCoverHtml({ title, introParagraphs, logoDataUrl })}
-  ${skipFrontMatter ? '' : buildTocHtml(tocItems)}
+  ${skipCoverPage ? '' : buildCoverHtml({ title, introParagraphs })}
+  ${skipToc ? '' : buildTocHtml(tocItems)}
   ${buildSectionHtml(sections)}
 </body>
 </html>`;
@@ -1063,17 +1176,6 @@ async function main() {
 
   const markdownRaw = await fs.readFile(inputPath, 'utf8');
   const markdown = await embedMarkdownImages(markdownRaw, path.dirname(inputPath));
-  const extractedLogoPath = path.resolve(repoRoot, 'artifacts/brandguide-preview/brand-logo-horizontal-final.png');
-  const fallbackLogoPath = path.resolve(repoRoot, 'logo.png');
-  let logoDataUrl;
-
-  try {
-    await fs.access(extractedLogoPath);
-    logoDataUrl = await fileToDataUrl(extractedLogoPath);
-  }
-  catch {
-    logoDataUrl = await fileToDataUrl(fallbackLogoPath);
-  }
 
   marked.setOptions({
     gfm: true,
@@ -1083,13 +1185,16 @@ async function main() {
   const tocItems = extractToc(markdown);
   const structure = extractDocumentStructure(markdown);
   const introParagraphs = extractIntroParagraphs(structure.introMarkdown);
+  const sections = skipSections.length
+    ? structure.sections.filter((section) => !skipSections.includes(section.title))
+    : structure.sections;
   const html = buildHtml({
     title: structure.title || explicitTitle,
     tocItems,
-    sections: structure.sections,
+    sections,
     introParagraphs,
-    logoDataUrl,
-    skipFrontMatter: contentOnly,
+    skipCover: skipCover,
+    skipToc: contentOnly,
   });
   const browserPath = await resolveBrowserPath();
 

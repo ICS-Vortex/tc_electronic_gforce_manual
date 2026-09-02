@@ -1094,7 +1094,7 @@ Matrix для деталей).
 
 ### Setting up an Expression pedal
 
-![Modifiers — Utilities, Effects та MIDI & Pedal](images/modifiers-overview.png)
+![Налаштування Expression Pedal — Utilities, Effects та Modifiers](images/modifiers-overview.png)
 
 **ПРИМІТКА:** Якщо параметр не реагує правильно, спробуйте відкалібрувати педаль (див. `Utility`, Pedal Calibration).
 
@@ -2843,104 +2843,299 @@ Run Test Program  Див. опис на сторінці 53.
 
 ## MIDI Implementation Chart
 
-**EFFECTS PROCESSOR G-Force** — May 23th, 1997 Version 1.0
+<div class="midi-chart-page">
 
-| Function | Transmitted | Recognized | Remarks |
-| :--- | :---: | :---: | :--- |
-| **Basic Channel** | | | |
-| Default | 1 | 1 | |
-| Changed | 1-16 | 1-16 | |
-| **Mode** | | | |
-| Default | | | |
-| Messages | X | X | |
-| Altered | | | |
-| **Note Number** | X | O | |
-| True Voice | X | X | |
-| **Velocity** | | | |
-| Note ON | X | X | |
-| Note OFF | X | X | |
-| **After Touch** | | | |
-| Key's | X | O | |
-| Ch's | X | X | |
-| **Pitch Bend** | X | O | |
-| **Control Change** | 0-127 | 0-127 | |
-| **Prog Change** | O | O | |
-| True # | 0-127 | 0-127 | |
-| **System Exclusive** | O | O | Bulkdump |
-| **Common** | | | |
-| :Song Pos | X | X | |
-| :Song Sel | X | X | |
-| :Tune | X | X | |
-| **System real time** | | | |
-| :Clock | X | X | |
-| :Commands | X | X | |
-| **Aux Messages** | | | |
-| :Local ON/OFF | X | X | |
-| :All Notes OFF | X | X | |
-| :Active Sense | X | X | |
-| :Reset | X | X | |
-| **Notes** | | | |
+<div class="midi-chart-banner">MIDI IMPLEMENTATION CHART</div>
 
-**Notes:** O = ТАК (YES) &nbsp;·&nbsp; X = НІ (NO)
+<p class="midi-chart-subtitle">EFFECTS PROCESSOR G-Force — May 23th, 1997 Version 1.0</p>
+
+<table class="midi-chart-table">
+<thead>
+<tr>
+<th>Function</th>
+<th>Transmitted</th>
+<th>Recognized</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="midi-fn midi-fn-main">Basic Channel</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Default</td>
+<td class="midi-tx">1</td>
+<td class="midi-rx">1</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Changed</td>
+<td class="midi-tx">1-16</td>
+<td class="midi-rx">1-16</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">Mode</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Default</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Messages</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Altered</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">Note Number</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">O</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">True Voice</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">Velocity</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Note ON</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Note OFF</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">After Touch</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Key's</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">O</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">Ch's</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">Pitch Bend</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">O</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">Control Change</td>
+<td class="midi-tx">0-127</td>
+<td class="midi-rx">0-127</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr class="midi-section-divider"><td colspan="4"></td></tr>
+<tr>
+<td class="midi-fn midi-fn-main">Prog Change</td>
+<td class="midi-tx">O</td>
+<td class="midi-rx">O</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">True #</td>
+<td class="midi-tx">0-127</td>
+<td class="midi-rx">0-127</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">System Exclusive</td>
+<td class="midi-tx">O Bulkdump</td>
+<td class="midi-rx">O Bulkdump</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">Common</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:Song Pos</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:Song Sel</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:Tune</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">System real time</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:Clock</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:Commands</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">Aux Messages</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:Local ON/OFF</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:All Notes OFF</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:Active Sense</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-sub">:Reset</td>
+<td class="midi-tx">X</td>
+<td class="midi-rx">X</td>
+<td class="midi-remarks"></td>
+</tr>
+<tr>
+<td class="midi-fn midi-fn-main">Notes</td>
+<td class="midi-tx"></td>
+<td class="midi-rx"></td>
+<td class="midi-remarks"></td>
+</tr>
+<tr class="midi-section-divider"><td colspan="4"></td></tr>
+</tbody>
+</table>
+
+<p class="midi-chart-legend"><strong>O</strong>:YES &nbsp;&nbsp; <strong>X</strong>:NO</p>
+
+</div>
 
 ## Self Test
 
-ДОСТУП ДО SELF-TEST І ВИБІР »RUN TEST PROGRAM«
+<div class="self-test-page">
 
-Обертайте `Value Wheel` для переміщення між Self tests.
-Key test  Виберіть Key test, натиснувши `Enter`.
-Ключі мають бути натиснуті у порядку, який запитує G-Force, щоб пройти тест.
-Натисніть `Exit`, щоб вийти з Key test.
-`In/Out knobs` test  Виберіть `In/Out knobs` test, натиснувши `Enter`.
-Обертайте `In/Out knobs` до 30 і назад до 0, щоб пройти тест.
-Натисніть `Exit`, щоб вийти з In/Out test.
-Parameter + `Value Wheel` test  Виберіть тест, натиснувши `Enter`.
-Обертайте Value and `Parameter wheel` до 30 і назад до 0, щоб пройти тест.
-Натисніть `Exit`, щоб вийти з Adjust Wheel test.
-LED test  Виберіть LEDs test, натиснувши `Enter`.
-Обертайте Adjust Wheel, щоб перевірити LEDs.
-Тест «ok», коли не горить жоден Led.
-Натисніть `Exit`, щоб вийти з Led test.
-Display test  Виберіть Display test, натиснувши `Enter`.
-Натисніть `Enter`, щоб перевірити, що всі пікселі світяться.
-Натисніть будь-який key, щоб вийти з pixel test.
-Натисніть `Exit`, щоб вийти з Display test.
-Analog I/O test  Виберіть Analog I/O test, натиснувши `Enter`.
-Підключіть Analog Output до Analog Input, який потрібно перевірити, і натисніть `Enter`.
-PPM має показувати -12 dB, щоб пройти тест.
-Натисніть `Exit`, щоб вийти з Analog I/O test.
-Digital I/O test  Виберіть Digital I/O test, натиснувши `Enter`.
-Підключіть Digital Output до Digital Input, який потрібно перевірити, і натисніть `Enter`.
-AES/EBU output також можна підключити до S/PDIF input і навпаки.
-Натисніть `Exit`, щоб вийти з Digital I/O test.
-`MIDI` I/O test  Виберіть `Midi` I/O test, натиснувши `Enter`.
-Підключіть `Midi` Out до `Midi` In.
-Prg change 1-128 передається на `Midi` Thru.
-Підключіть цей роз'єм до `Midi` compatible device і підтвердьте Prg. changes.
-Натисніть `Exit`, щоб вийти з `Midi` I/O test.
-Pedal socket test  Виберіть Pedal test, натиснувши `Enter`.
-Підключіть momentary pedal до Pedal socket.
-При натисканні Pedal Result має бути OK.
-При відпусканні Result має бути Not OK.
-Натисніть `Exit`, щоб вийти з Pedal test.
-NOTE: Result тесту має бути OK, якщо jack не вставлено.
-PCMCIA test  Виберіть PCMCIA test, натиснувши `Enter`.
-Вставте PCMCIA `card`.
-Увага: усі Data на PCMCIA `card` будуть знищені.
-Натисніть `Enter` для тесту.
-Result показує: Low battery — час замінити батарею у вашій PCMCIA `card`.
-Not OK — спробуйте тест з іншою PCMCIA `card`.
-Натисніть `Exit`, щоб вийти з PCMCIA test.
-Battery test  Виберіть Battery test, натиснувши `Enter`.
-Підтвердьте, що Result є OK.
-Натисніть `Exit`, щоб вийти з Battery test.
-System test  Виберіть System test, натиснувши `Enter`.
-Підтвердьте, що Result є OK.
-Result показує: Eeprom Not OK — пристрій, найімовірно, працюватиме нормально; це повідомлення лише для сервісних цілей.
-DSP Not OK — зверніться до місцевого дилера.
-Натисніть `Exit`, щоб вийти з System test.
-`Power` Off - On, щоб запустити стандартне програмне забезпечення.
-Build in test v.2.07
+<p class="self-test-lead"><strong>НАТИСНІТЬ <code>OVERALL BYPASS</code> KEY ПІД ЧАС УВІМКНЕННЯ, ЩОБ ДОСТУПИТИСЯ SELF-TEST І ВИБРАТИ »RUN TEST PROGRAM«</strong></p>
+
+<p class="self-test-intro"><em>Обертайте <code>Value Wheel</code> для переміщення між Self tests.</em></p>
+
+<div class="self-test-columns">
+<div class="self-test-col">
+<div class="self-test-item"><h4>Key test</h4><p>Виберіть Key test, натиснувши <code>Enter</code>.</p>
+<p>Ключі мають бути натиснуті у порядку, який запитує G-Force, щоб пройти тест.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Key test.</p></div>
+<div class="self-test-item"><h4>In/Out knobs test</h4><p>Виберіть In/Out knobs test, натиснувши <code>Enter</code>.</p>
+<p>Обертайте <code>In/Out knobs</code> до 30 і назад до 0, щоб пройти тест.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з In/Out test.</p></div>
+<div class="self-test-item"><h4>Parameter + Value Wheel test</h4><p>Виберіть тест, натиснувши <code>Enter</code>.</p>
+<p>Обертайте <code>Value</code> і <code>Parameter wheel</code> до 30 і назад до 0, щоб пройти тест.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Adjust Wheel test.</p></div>
+<div class="self-test-item"><h4>LED test</h4><p>Виберіть LEDs test, натиснувши <code>Enter</code>.</p>
+<p>Обертайте Adjust Wheel, щоб перевірити LEDs.</p>
+<p>Тест «ok», коли не горить жоден LED.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Led test.</p></div>
+<div class="self-test-item"><h4>Display test</h4><p>Виберіть Display test, натиснувши <code>Enter</code>.</p>
+<p>Натисніть <code>Enter</code>, щоб перевірити, що всі пікселі світяться.</p>
+<p>Натисніть будь-який key, щоб вийти з pixel test.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Display test.</p></div>
+<div class="self-test-item"><h4>Analog I/O test</h4><p>Виберіть Analog I/O test, натиснувши <code>Enter</code>.</p>
+<p>Підключіть Analog Output до Analog Input, який потрібно перевірити, і натисніть <code>Enter</code>.</p>
+<p>PPM має показувати -12 dB, щоб пройти тест.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Analog I/O test.</p></div>
+<div class="self-test-item"><h4>Digital I/O test</h4><p>Виберіть Digital I/O test, натиснувши <code>Enter</code>.</p>
+<p>Підключіть Digital Output до Digital Input, який потрібно перевірити, і натисніть <code>Enter</code>.</p>
+<p>AES/EBU output також можна підключити до S/PDIF input і навпаки.</p></div>
+</div>
+<div class="self-test-col">
+<div class="self-test-item"><h4>Digital I/O test</h4><p>PPM має показувати 0 dB, щоб пройти тест.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Digital I/O test.</p></div>
+<div class="self-test-item"><h4>MIDI I/O test</h4><p>Виберіть Midi I/O test, натиснувши <code>Enter</code>.</p>
+<p>Підключіть <code>Midi Out</code> до <code>Midi In</code>.</p>
+<p>Prg change 1–128 передається на <code>Midi Thru</code>.</p>
+<p>Підключіть цей роз'єм до Midi compatible device і підтвердьте Prg. changes.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Midi I/O test.</p></div>
+<div class="self-test-item"><h4>Pedal socket test</h4><p>Виберіть Pedal test, натиснувши <code>Enter</code>.</p>
+<p>Підключіть momentary pedal до Pedal socket.</p>
+<p>При натисканні Pedal Result має бути OK.</p>
+<p>При відпусканні Result має бути Not OK.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Pedal test.</p>
+<p><strong>NOTE:</strong> Result тесту має бути OK, якщо jack не вставлено.</p></div>
+<div class="self-test-item"><h4>PCMCIA test</h4><p>Виберіть PCMCIA test, натиснувши <code>Enter</code>.</p>
+<p>Вставте PCMCIA <code>card</code>. <em>Увага: усі Data на PCMCIA card будуть знищені.</em></p>
+<p>Натисніть <code>Enter</code> для тесту.</p>
+<p>Result показує: Low battery — час замінити батарею у вашій PCMCIA card.</p>
+<p>Not OK — спробуйте тест з іншою PCMCIA card.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з PCMCIA test.</p></div>
+<div class="self-test-item"><h4>Battery test</h4><p>Виберіть Battery test, натиснувши <code>Enter</code>.</p>
+<p>Підтвердьте, що Result є OK.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з Battery test.</p></div>
+<div class="self-test-item"><h4>System test</h4><p>Виберіть System test, натиснувши <code>Enter</code>.</p>
+<p>Підтвердьте, що Result є OK.</p>
+<p>Result показує: Eeprom Not OK — пристрій, найімовірно, працюватиме нормально; це повідомлення лише для сервісних цілей.</p>
+<p>DSP Not OK — зверніться до місцевого дилера.</p>
+<p>Натисніть <code>Exit</code>, щоб вийти з System test.</p></div>
+</div>
+</div>
+
+<p class="self-test-footer"><em><code>Power</code> Off — On, щоб запустити стандартне програмне забезпечення.</em></p>
+<p class="self-test-footer"><em>Build in test v.2.07</em></p>
+
+</div>
 
 ## Список presets
 

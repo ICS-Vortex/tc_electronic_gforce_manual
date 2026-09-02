@@ -5,11 +5,19 @@ import { execSync } from 'child_process';
 import { PDFDocument } from 'pdf-lib';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const SRC = path.join(__dirname, 'source', 'tc_electronic_g_force.PDF');
 const OUT = path.join(__dirname, 'tc_electronic_g_force_UA.pdf');
 const OUT_DIR = path.join(__dirname, 'out');
 const MANUAL_MD = path.join(__dirname, 'manuals', 'GForce.ua.md');
 const EXPORT = path.join(__dirname, 'export-gforce-pdf.mjs');
+
+/** A4 portrait, blank placeholder for future custom cover art. */
+const A4 = [595.28, 841.89];
+
+async function writeBlankPagePdf(outPath) {
+  const doc = await PDFDocument.create();
+  doc.addPage(A4);
+  fs.writeFileSync(outPath, await doc.save());
+}
 
 async function mergePdfs(parts, outPath) {
   const out = await PDFDocument.create();
@@ -24,12 +32,6 @@ async function mergePdfs(parts, outPath) {
 }
 
 async function main() {
-  if (!fs.existsSync(SRC)) {
-    console.error('Missing source PDF:', SRC);
-    console.error('Place the original manual at source/tc_electronic_g_force.PDF');
-    process.exit(1);
-  }
-
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
   console.log('Generating Markdown...');
@@ -39,22 +41,16 @@ async function main() {
 
   console.log('Exporting manual PDF...');
   execSync(
-    `node "${EXPORT}" "${MANUAL_MD}" "${manualPdf}" "TC Electronic G-Force"`,
+    `node "${EXPORT}" "${MANUAL_MD}" "${manualPdf}" "TC Electronic G-Force" --skip-cover --skip-printed-toc`,
     { cwd: __dirname, stdio: 'inherit' }
   );
 
-  const srcBytes = fs.readFileSync(SRC);
-  const srcPdf = await PDFDocument.load(srcBytes);
   const cover1 = path.join(OUT_DIR, 'orig-cover1.pdf');
   const cover2 = path.join(OUT_DIR, 'orig-cover2.pdf');
 
-  const tmp1 = await PDFDocument.create();
-  tmp1.addPage((await tmp1.copyPages(srcPdf, [0]))[0]);
-  fs.writeFileSync(cover1, await tmp1.save());
-
-  const tmp2 = await PDFDocument.create();
-  tmp2.addPage((await tmp2.copyPages(srcPdf, [1]))[0]);
-  fs.writeFileSync(cover2, await tmp2.save());
+  console.log('Writing blank cover placeholders...');
+  await writeBlankPagePdf(cover1);
+  await writeBlankPagePdf(cover2);
 
   await mergePdfs([cover1, cover2, manualPdf], OUT);
 }

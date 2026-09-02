@@ -1,6 +1,6 @@
 import path from 'path';
 
-/** VIRPIL Controls brand guide v1.1 — aligned with linktool/scripts/export-doc-pdf.mjs */
+/** PDF export typography and colours for the G-Force UA manual. */
 export const LINKTOOL_ROOT = 'c:\\Users\\Vortex\\Documents\\Development\\linktool';
 export const OSWALD_DIR = path.join(
   LINKTOOL_ROOT,
@@ -9,7 +9,6 @@ export const OSWALD_DIR = path.join(
   'oswald',
   'files'
 );
-export const LOGO_PATH = path.join(LINKTOOL_ROOT, 'logo.png');
 
 export const BRAND = {
   red: { r: 229 / 255, g: 0, b: 17 / 255 },
@@ -43,4 +42,4 @@ export function isPanelLabel(text) {
   return false;
 }
 
-export const FOOTER_TITLE = 'TC ELECTRONIC G-FORCE — UA MANUAL';
+export const FOOTER_TITLE = 'TC ELECTRONIC G-FORCE';
