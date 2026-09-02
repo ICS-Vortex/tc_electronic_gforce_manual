@@ -1,0 +1,16 @@
+{
+  "name": "tc-electronic-g-force-ua-manual",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ukrainian TC Electronic G-Force manual — Markdown + branded PDF export",
+  "scripts": {
+    "combine": "node combine.mjs",
+    "md": "node generate-md.mjs",
+    "pdf": "node build_pdf.mjs",
+    "build": "node build_pdf.mjs"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  }
+}

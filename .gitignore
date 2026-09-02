@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build intermediates
+out/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.cursor/
+
+# Optional local overrides
+.env
+.env.*

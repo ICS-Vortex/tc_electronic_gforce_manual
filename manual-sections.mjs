@@ -1,0 +1,24 @@
+/** Логічні розділи посібника (оригінальні стор. 3–5 і 7–63; стор. 6 — ілюстрація в PDF). */
+export const PART1_SECTIONS = [
+  { title: 'Безпека та нормативні вимоги', from: 3, to: 4 },
+  { title: 'Про цей посібник', from: 5, to: 5, custom: 'toc' },
+];
+
+export const PART2_SECTIONS = [
+  { title: 'Вітаємо', from: 7, to: 8 },
+  { title: 'Короткий посилання', from: 9, to: 9 },
+  { title: 'Передня панель', from: 10, to: 11 },
+  { title: 'Задня панель', from: 12, to: 12 },
+  { title: 'Схема сигналу', from: 13, to: 13 },
+  { title: 'Як налаштувати ефекти', from: 14, to: 17 },
+  { title: 'Системи підключення гітари', from: 18, to: 18 },
+  { title: 'Виклик та збереження preset', from: 19, to: 21 },
+  { title: 'Effects, Routing та Layout', from: 22, to: 28 },
+  { title: 'I/O Setup та MIDI', from: 29, to: 33 },
+  { title: 'Блоки ефектів', from: 34, to: 47 },
+  { title: 'Utility, Tempo та Tuner', from: 48, to: 52 },
+  { title: 'Технічні характеристики', from: 53, to: 54 },
+  { title: 'Усунення несправностей та MIDI', from: 55, to: 56 },
+  { title: 'Self Test', from: 57, to: 58 },
+  { title: 'Список presets', from: 59, to: 63 },
+];
