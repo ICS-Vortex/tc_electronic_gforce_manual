@@ -9,6 +9,7 @@ const linktoolRoot = 'c:\\Users\\Vortex\\Documents\\Development\\linktool';
 const requireFromLinktool = createRequire(path.join(linktoolRoot, 'package.json'));
 const puppeteer = requireFromLinktool('puppeteer-core');
 const repoRoot = linktoolRoot;
+const DEVICE_IMAGE_PATH = path.join(__dirname, 'images', 'gforce_view-hq.png');
 
 let marked;
 
@@ -89,6 +90,7 @@ const labelsByLocale = {
       ['I/O', 'Audio, MIDI та Utility'],
     ],
     footerTitle: 'TC Electronic G-Force',
+    devicePageTitle: 'ПОСІБНИК КОРИСТУВАЧА',
     sectionFallbackMajor: 'РОЗДІЛ',
     sectionFallbackMinor: '',
     sectionSingleWordMinor: 'РОЗДІЛ',
@@ -434,6 +436,29 @@ function formatManualHtml(markdown) {
     .replace(/<h4>/g, '<h4 class="content-h4">');
 }
 
+function buildDevicePageHtml(imageUrl) {
+  const title = labels.devicePageTitle || "USER'S MANUAL";
+  return `<section class="device-page">
+    <p class="device-page-title">${escapeHtml(title)}</p>
+    <div class="device-page-body">
+      <div class="device-page-shell">
+        <img class="device-photo" src="${imageUrl}" alt="TC Electronic G-Force" />
+      </div>
+      <div class="device-page-brand">
+        <div class="device-brand-left">
+          <div class="device-brand-tc">t.c. electronic</div>
+          <div class="device-brand-tagline">ULTIMATE SOUND MACHINES</div>
+        </div>
+        <div class="device-brand-divider" aria-hidden="true"></div>
+        <div class="device-brand-right">
+          <div class="device-brand-product">G-Force</div>
+          <div class="device-brand-subtitle">GUITAR EFFECTS PROCESSOR</div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
 function buildCoverHtml({ title, introParagraphs }) {
   const leadParagraph = introParagraphs[0]
     || labels.coverLeadFallback;
@@ -529,7 +554,7 @@ function buildSectionHtml(sections) {
   }).join('');
 }
 
-function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skipCoverPage = false, skipToc = false }) {
+function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skipCoverPage = false, skipToc = false, deviceImageUrl = '' }) {
   const oswald300 = toFileUrl(path.resolve(repoRoot, 'node_modules/@fontsource/oswald/files/oswald-latin-300-normal.woff2'));
   const oswald400 = toFileUrl(path.resolve(repoRoot, 'node_modules/@fontsource/oswald/files/oswald-latin-400-normal.woff2'));
   const oswald500 = toFileUrl(path.resolve(repoRoot, 'node_modules/@fontsource/oswald/files/oswald-latin-500-normal.woff2'));
@@ -653,11 +678,133 @@ function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skip
     }
 
     .cover-page,
+    .device-page,
     .toc-page,
     .manual-section {
       page-break-after: always;
       break-after: page;
       background: var(--brand-white);
+    }
+
+    .device-page {
+      position: relative;
+      min-height: 257mm;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      padding: 0;
+      margin: 0 -14mm;
+      width: calc(100% + 28mm);
+      box-sizing: border-box;
+    }
+
+    .device-page-title {
+      position: absolute;
+      top: 0;
+      right: 14mm;
+      margin: 0;
+      padding-top: 1mm;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
+      font-size: 2.45rem;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .device-page-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      width: 100%;
+      padding-top: 14mm;
+    }
+
+    .device-page-shell {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .device-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .device-page-brand {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5mm;
+      padding: 5mm 14mm 10mm;
+      margin-left: auto;
+    }
+
+    .device-brand-left {
+      text-align: right;
+    }
+
+    .device-brand-tc {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--brand-black);
+      line-height: 1.05;
+    }
+
+    .device-brand-tagline {
+      margin-top: 1.8mm;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 0.48rem;
+      font-weight: 700;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .device-brand-divider {
+      width: 1px;
+      align-self: stretch;
+      min-height: 11mm;
+      background: var(--brand-black);
+      flex-shrink: 0;
+    }
+
+    .device-brand-right {
+      text-align: left;
+    }
+
+    .device-brand-product {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 1.28rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--brand-black);
+      line-height: 1.05;
+    }
+
+    .device-brand-subtitle {
+      margin-top: 1.8mm;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 0.48rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      line-height: 1.2;
+      white-space: nowrap;
     }
 
     .cover-shell,
@@ -981,22 +1128,6 @@ function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skip
       margin-top: 1mm;
     }
 
-    .midi-chart-banner {
-      background: #2a2a2a;
-      color: var(--brand-white);
-      padding: 3.2mm 4.5mm;
-      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .midi-chart-subtitle {
-      margin: 3.5mm 0 4mm !important;
-      font-size: 0.92rem !important;
-    }
-
     .midi-chart-table {
       width: 100%;
       border-collapse: collapse;
@@ -1197,6 +1328,7 @@ function buildHtml({ title, tocItems, sections, introParagraphs, skipCover: skip
   </style>
 </head>
 <body>
+  ${deviceImageUrl && skipCoverPage ? buildDevicePageHtml(deviceImageUrl) : ''}
   ${skipCoverPage ? '' : buildCoverHtml({ title, introParagraphs })}
   ${skipToc ? '' : buildTocHtml(tocItems)}
   ${buildSectionHtml(sections)}
@@ -1224,6 +1356,15 @@ async function main() {
   const sections = skipSections.length
     ? structure.sections.filter((section) => !skipSections.includes(section.title))
     : structure.sections;
+
+  let deviceImageUrl = '';
+  try {
+    await fs.access(DEVICE_IMAGE_PATH);
+    deviceImageUrl = toFileUrl(DEVICE_IMAGE_PATH);
+  } catch {
+    // optional hero image
+  }
+
   const html = buildHtml({
     title: structure.title || explicitTitle,
     tocItems,
@@ -1231,6 +1372,7 @@ async function main() {
     introParagraphs,
     skipCover: skipCover,
     skipToc: contentOnly,
+    deviceImageUrl,
   });
   const browserPath = await resolveBrowserPath();
 

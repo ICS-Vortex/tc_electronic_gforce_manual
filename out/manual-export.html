@@ -110,11 +110,133 @@
     }
 
     .cover-page,
+    .device-page,
     .toc-page,
     .manual-section {
       page-break-after: always;
       break-after: page;
       background: var(--brand-white);
+    }
+
+    .device-page {
+      position: relative;
+      min-height: 257mm;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      padding: 0;
+      margin: 0 -14mm;
+      width: calc(100% + 28mm);
+      box-sizing: border-box;
+    }
+
+    .device-page-title {
+      position: absolute;
+      top: 0;
+      right: 14mm;
+      margin: 0;
+      padding-top: 1mm;
+      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
+      font-size: 2.45rem;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .device-page-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      width: 100%;
+      padding-top: 14mm;
+    }
+
+    .device-page-shell {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .device-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .device-page-brand {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5mm;
+      padding: 5mm 14mm 10mm;
+      margin-left: auto;
+    }
+
+    .device-brand-left {
+      text-align: right;
+    }
+
+    .device-brand-tc {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--brand-black);
+      line-height: 1.05;
+    }
+
+    .device-brand-tagline {
+      margin-top: 1.8mm;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 0.48rem;
+      font-weight: 700;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .device-brand-divider {
+      width: 1px;
+      align-self: stretch;
+      min-height: 11mm;
+      background: var(--brand-black);
+      flex-shrink: 0;
+    }
+
+    .device-brand-right {
+      text-align: left;
+    }
+
+    .device-brand-product {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 1.28rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--brand-black);
+      line-height: 1.05;
+    }
+
+    .device-brand-subtitle {
+      margin-top: 1.8mm;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 0.48rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      line-height: 1.2;
+      white-space: nowrap;
     }
 
     .cover-shell,
@@ -438,22 +560,6 @@
       margin-top: 1mm;
     }
 
-    .midi-chart-banner {
-      background: #2a2a2a;
-      color: var(--brand-white);
-      padding: 3.2mm 4.5mm;
-      font-family: 'ManualTitle', 'Arial Narrow', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .midi-chart-subtitle {
-      margin: 3.5mm 0 4mm !important;
-      font-size: 0.92rem !important;
-    }
-
     .midi-chart-table {
       width: 100%;
       border-collapse: collapse;
@@ -654,6 +760,25 @@
   </style>
 </head>
 <body>
+  <section class="device-page">
+    <p class="device-page-title">ПОСІБНИК КОРИСТУВАЧА</p>
+    <div class="device-page-body">
+      <div class="device-page-shell">
+        <img class="device-photo" src="file:///C:/Users/Vortex/Downloads/tc_electronic_g_force/images/gforce_view-hq.png" alt="TC Electronic G-Force" />
+      </div>
+      <div class="device-page-brand">
+        <div class="device-brand-left">
+          <div class="device-brand-tc">t.c. electronic</div>
+          <div class="device-brand-tagline">ULTIMATE SOUND MACHINES</div>
+        </div>
+        <div class="device-brand-divider" aria-hidden="true"></div>
+        <div class="device-brand-right">
+          <div class="device-brand-product">G-Force</div>
+          <div class="device-brand-subtitle">GUITAR EFFECTS PROCESSOR</div>
+        </div>
+      </div>
+    </div>
+  </section>
   
   <section class="toc-page">
     <div class="page-shell toc-shell">
@@ -668,7 +793,7 @@
           <p>Основні розділи згруповані для швидшої навігації.</p>
         </div>
         <h2 class="toc-title">Зміст</h2>
-        <ol class="toc-list"><li class="toc-item toc-item-h2"><a href="#section">Безпека та нормативні вимоги</a></li><li class="toc-item toc-item-h3"><a href="#section">Сервіс</a></li><li class="toc-item toc-item-h3"><a href="#section">Попередження!</a></li><li class="toc-item toc-item-h3"><a href="#section">Для клієнтів у Канаді:</a></li><li class="toc-item toc-item-h2"><a href="#section">Про цей посібник</a></li><li class="toc-item toc-item-h2"><a href="#section">Вітаємо</a></li><li class="toc-item toc-item-h3"><a href="#section">Про цей посібник</a></li><li class="toc-item toc-item-h3"><a href="#palle-schultz">Palle Schultz</a></li><li class="toc-item toc-item-h2"><a href="#section">Короткий посилання</a></li><li class="toc-item toc-item-h3"><a href="#midi-board">Налаштування MIDI board</a></li><li class="toc-item toc-item-h3"><a href="#expression-pedal">Налаштування Expression Pedal</a></li><li class="toc-item toc-item-h2"><a href="#section">Передня панель</a></li><li class="toc-item toc-item-h2"><a href="#section">Задня панель</a></li><li class="toc-item toc-item-h2"><a href="#section">Схема сигналу</a></li><li class="toc-item toc-item-h2"><a href="#section">Як налаштувати ефекти</a></li><li class="toc-item toc-item-h3"><a href="#section">Налаштування ефекту</a></li><li class="toc-item toc-item-h3"><a href="#section">Редагування ефекту</a></li><li class="toc-item toc-item-h3"><a href="#preset">Як установити рівень preset</a></li><li class="toc-item toc-item-h3"><a href="#routing">Як додати блок до Routing</a></li><li class="toc-item toc-item-h3"><a href="#sub-algorithm">Як змінити sub-algorithm</a></li><li class="toc-item toc-item-h3"><a href="#section">Як видалити або замінити блок</a></li><li class="toc-item toc-item-h3"><a href="#preset">Як зберегти ваш новий preset</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#modifiers">Як підключити Modifiers</a></li><li class="toc-item toc-item-h3"><a href="#ducking-delay">Створення ducking Delay</a></li><li class="toc-item toc-item-h3"><a href="#expression-pedal">Налаштування Expression Pedal</a></li><li class="toc-item toc-item-h3"><a href="#section">Калібрування та вибір типу педалі</a></li><li class="toc-item toc-item-h3"><a href="#section">Функція педалі</a></li><li class="toc-item toc-item-h3"><a href="#midi-board">Налаштування MIDI board</a></li><li class="toc-item toc-item-h3"><a href="#user-presets-midi-board">Зміна User presets через MIDI board</a></li><li class="toc-item toc-item-h3"><a href="#midi-board">Додаткові функції MIDI board</a></li><li class="toc-item toc-item-h3"><a href="#preset">Виклик одного блоку з preset</a></li><li class="toc-item toc-item-h2"><a href="#section">Системи підключення гітари</a></li><li class="toc-item toc-item-h3"><a href="#stereo">Stereo гітарна система</a></li><li class="toc-item toc-item-h3"><a href="#serial-setup">Serial setup</a></li><li class="toc-item toc-item-h3"><a href="#parallel-setup">Parallel setup</a></li><li class="toc-item toc-item-h3"><a href="#section">Підключення</a></li><li class="toc-item toc-item-h3"><a href="#section">Моно гітарна система</a></li><li class="toc-item toc-item-h2"><a href="#preset">Виклик та збереження preset</a></li><li class="toc-item toc-item-h3"><a href="#preset">Виклик Preset</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#preset">Оптимальна зміна preset</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">Виклик одного ефекту</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#user-preset">Збереження нового User preset</a></li><li class="toc-item toc-item-h3"><a href="#section">Збереження з тим самим ім’ям</a></li><li class="toc-item toc-item-h3"><a href="#memory-card">Використання memory card</a></li><li class="toc-item toc-item-h3"><a href="#section">Типи карт</a></li><li class="toc-item toc-item-h2"><a href="#effects-routing-layout">Effects, Routing та Layout</a></li><li class="toc-item toc-item-h3"><a href="#section">Редагування ефекту</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#basic-channel-basic-midi-channel-g-force">Basic Channel  Basic MIDI channel G-Force.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#sysex-device-id-sysex-id-g-force">Sysex device ID  Sysex ID G-Force.</a></li><li class="toc-item toc-item-h3"><a href="#map-program-change-no">Map Program change no.</a></li><li class="toc-item toc-item-h3"><a href="#bypass">Bypass</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#setting-up-an-expression-pedal">Setting up an Expression pedal</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#utility-pedal-calibration">Utility, Pedal Calibration).</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#inputs">Inputs).</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#attack">Attack</a></li><li class="toc-item toc-item-h3"><a href="#release">Release</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h2"><a href="#i-o-setup-midi">I/O Setup та MIDI</a></li><li class="toc-item toc-item-h3"><a href="#once-retrig">Once-Retrig</a></li><li class="toc-item toc-item-h3"><a href="#loop-retrig">Loop-Retrig</a></li><li class="toc-item toc-item-h3"><a href="#sust-retrig">Sust-Retrig</a></li><li class="toc-item toc-item-h3"><a href="#speed">Speed</a></li><li class="toc-item toc-item-h3"><a href="#depth">Depth</a></li><li class="toc-item toc-item-h3"><a href="#tempo">Tempo</a></li><li class="toc-item toc-item-h3"><a href="#curve">Curve</a></li><li class="toc-item toc-item-h3"><a href="#pulsewidth">Pulsewidth</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#dials">Dials</a></li><li class="toc-item toc-item-h3"><a href="#pulsewidth-billboard">Pulsewidth   і Billboard.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#card-type-sram-pcmcia-type-1-min-64-k-byte">Card type: SRAM PCMCIA, type 1, min. 64 K byte.</a></li><li class="toc-item toc-item-h3"><a href="#section">УВАГА:</a></li><li class="toc-item toc-item-h3"><a href="#section">УВАГА:</a></li><li class="toc-item toc-item-h2"><a href="#tempo">Tempo</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#tempo-display">Tempo display</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h2"><a href="#tuner">Tuner</a></li><li class="toc-item toc-item-h3"><a href="#tuner-display">Tuner display</a></li><li class="toc-item toc-item-h2"><a href="#section">Блоки ефектів</a></li><li class="toc-item toc-item-h3"><a href="#noise-gate">Noise gate</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#wah-wah">Wah Wah</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#pulsewidth-only-in-advanced">Pulsewidth (only in Advanced)</a></li><li class="toc-item toc-item-h3"><a href="#lfo-phase-only-in-advanced">LFO Phase (only in Advanced)</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#curve-only-in-advanced">Curve (only in Advanced)</a></li><li class="toc-item toc-item-h3"><a href="#pulsewidth-only-in-surround-panner">Pulsewidth (only in Surround Panner)</a></li><li class="toc-item toc-item-h3"><a href="#lfo-phase-only-in-surround-panner">LFO Phase (only in Surround Panner)</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#width-only-in-surround-panner-width-panner">Width   (only in Surround Panner) Керує Width Panner.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#pitch">Блок Pitch</a></li><li class="toc-item toc-item-h3"><a href="#mode-mode-intelligent-pitcher">Mode  Виберіть mode Intelligent Pitcher.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#max-pitch-one-octave">Max. pitch — +/- one octave.</a></li><li class="toc-item toc-item-h3"><a href="#max-delay-time-voice-400-ms">Max. delay time на voice — 400 ms.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#fixed-1">Fixed 1 &amp;</a></li><li class="toc-item toc-item-h3"><a href="#maximum-pitch-12-semitones">Maximum pitch — +/- 12 semitones.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-voice-400-ms">Maximum delay time на voice — 400 ms.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-pitch-24-semitones">Maximum pitch — +/- 24 semitones.</a></li><li class="toc-item toc-item-h3"><a href="#delay-voice1-voice">Delay   - Voice1 &amp; Voice</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-voice-400-ms">Maximum delay time на voice — 400 ms.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#stereo-delay">Stereo Delay</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-740-ms">Maximum delay time — 740 ms.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-pitch-50-cents">Maximum pitch — +/- 50 cents.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-voice-400-ms">Maximum delay time на voice — 400 ms.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#dual-delay">Dual Delay</a></li><li class="toc-item toc-item-h3"><a href="#feedback-1-to-1-feedback-2-to">Feedback 1 to 1/Feedback 2 to</a></li><li class="toc-item toc-item-h3"><a href="#feedback-1-to-2-feedback-2-to-1">Feedback 1 to 2/ Feedback 2 to 1.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#dual-two-tap-delay">Dual Two Tap Delay</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-1480-ms">Maximum delay time — 1480 ms.</a></li><li class="toc-item toc-item-h3"><a href="#pan-position-panning-delay">Pan position  Керує panning Delay.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#quad-tap-delay">Quad Tap Delay</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#drive">Блок Drive</a></li><li class="toc-item toc-item-h3"><a href="#drive-drive-post-distortion">Блок Drive  Drive — це post distortion.</a></li><li class="toc-item toc-item-h2"><a href="#utility-tempo-tuner">Utility, Tempo та Tuner</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#chorus-flanger">Блок Chorus/Flanger</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#reverb">Блок Reverb</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-25">Range +/-25.</a></li><li class="toc-item toc-item-h3"><a href="#range-25">Range +/-25.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#color-tonal-color-initial-reflections">Color  Встановлює tonal color initial reflections.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-25">Range +/-25.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#simple-reverb">Simple Reverb</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h2"><a href="#reset">Сторінка Reset</a></li><li class="toc-item toc-item-h3"><a href="#reset-page">Як відкрити Reset page</a></li><li class="toc-item toc-item-h3"><a href="#store-user-def">Store User Def).</a></li><li class="toc-item toc-item-h3"><a href="#test-programs">Test Programs</a></li><li class="toc-item toc-item-h2"><a href="#section">Технічні характеристики</a></li><li class="toc-item toc-item-h2"><a href="#midi">Усунення несправностей та MIDI</a></li><li class="toc-item toc-item-h2"><a href="#midi-implementation-chart">MIDI Implementation Chart</a></li><li class="toc-item toc-item-h2"><a href="#self-test">Self Test</a></li><li class="toc-item toc-item-h2"><a href="#presets">Список presets</a></li><li class="toc-item toc-item-h3"><a href="#mono-1-12">Mono (1–12)</a></li><li class="toc-item toc-item-h3"><a href="#stereo-13-25">Stereo (13–25)</a></li><li class="toc-item toc-item-h3"><a href="#3-way-26-37">3-Way (26–37)</a></li><li class="toc-item toc-item-h3"><a href="#rhythm-38-88">Rhythm (38–88)</a></li><li class="toc-item toc-item-h3"><a href="#lead-89-137">Lead (89–137)</a></li><li class="toc-item toc-item-h3"><a href="#wacky-138-179">Wacky (138–179)</a></li><li class="toc-item toc-item-h3"><a href="#block-180-225">Block (180–225)</a></li></ol>
+        <ol class="toc-list"><li class="toc-item toc-item-h2"><a href="#section">Безпека та нормативні вимоги</a></li><li class="toc-item toc-item-h3"><a href="#section">Сервіс</a></li><li class="toc-item toc-item-h3"><a href="#section">Попередження!</a></li><li class="toc-item toc-item-h3"><a href="#section">Для клієнтів у Канаді:</a></li><li class="toc-item toc-item-h2"><a href="#section">Про цей посібник</a></li><li class="toc-item toc-item-h2"><a href="#section">Вітаємо</a></li><li class="toc-item toc-item-h3"><a href="#section">Про цей посібник</a></li><li class="toc-item toc-item-h3"><a href="#section">З точки зору користувача</a></li><li class="toc-item toc-item-h3"><a href="#palle-schultz">Palle Schultz</a></li><li class="toc-item toc-item-h2"><a href="#section">Короткий довідник</a></li><li class="toc-item toc-item-h3"><a href="#midi-board">Налаштування MIDI board</a></li><li class="toc-item toc-item-h3"><a href="#expression-pedal">Налаштування Expression Pedal</a></li><li class="toc-item toc-item-h2"><a href="#section">Передня панель</a></li><li class="toc-item toc-item-h2"><a href="#section">Задня панель</a></li><li class="toc-item toc-item-h2"><a href="#section">Схема сигналу</a></li><li class="toc-item toc-item-h2"><a href="#section">Як налаштувати ефекти</a></li><li class="toc-item toc-item-h3"><a href="#section">Налаштування ефекту</a></li><li class="toc-item toc-item-h3"><a href="#section">Редагування ефекту</a></li><li class="toc-item toc-item-h3"><a href="#preset">Як установити рівень preset</a></li><li class="toc-item toc-item-h3"><a href="#routing">Як додати блок до Routing</a></li><li class="toc-item toc-item-h3"><a href="#sub-algorithm">Як змінити sub-algorithm</a></li><li class="toc-item toc-item-h3"><a href="#section">Як видалити або замінити блок</a></li><li class="toc-item toc-item-h3"><a href="#preset">Як зберегти ваш новий preset</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#modifiers">Як підключити Modifiers</a></li><li class="toc-item toc-item-h3"><a href="#ducking-delay">Створення ducking Delay</a></li><li class="toc-item toc-item-h3"><a href="#expression-pedal">Налаштування Expression Pedal</a></li><li class="toc-item toc-item-h3"><a href="#section">Калібрування та вибір типу педалі</a></li><li class="toc-item toc-item-h3"><a href="#section">Функція педалі</a></li><li class="toc-item toc-item-h3"><a href="#midi-board">Налаштування MIDI board</a></li><li class="toc-item toc-item-h3"><a href="#user-presets-midi-board">Зміна User presets через MIDI board</a></li><li class="toc-item toc-item-h3"><a href="#midi-board">Додаткові функції MIDI board</a></li><li class="toc-item toc-item-h3"><a href="#preset">Виклик одного блоку з preset</a></li><li class="toc-item toc-item-h2"><a href="#section">Системи підключення гітари</a></li><li class="toc-item toc-item-h3"><a href="#stereo">Stereo гітарна система</a></li><li class="toc-item toc-item-h3"><a href="#serial-setup">Serial setup</a></li><li class="toc-item toc-item-h3"><a href="#parallel-setup">Parallel setup</a></li><li class="toc-item toc-item-h3"><a href="#section">Підключення</a></li><li class="toc-item toc-item-h3"><a href="#section">Моно гітарна система</a></li><li class="toc-item toc-item-h2"><a href="#preset">Виклик та збереження preset</a></li><li class="toc-item toc-item-h3"><a href="#preset">Виклик Preset</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#preset">Оптимальна зміна preset</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">Виклик одного ефекту</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#user-preset">Збереження нового User preset</a></li><li class="toc-item toc-item-h3"><a href="#section">Збереження з тим самим ім’ям</a></li><li class="toc-item toc-item-h3"><a href="#memory-card">Використання memory card</a></li><li class="toc-item toc-item-h3"><a href="#section">Типи карт</a></li><li class="toc-item toc-item-h2"><a href="#effects-routing-layout">Effects, Routing та Layout</a></li><li class="toc-item toc-item-h3"><a href="#section">Редагування ефекту</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#basic-channel-basic-midi-channel-g-force">Basic Channel  Basic MIDI channel G-Force.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#sysex-device-id-sysex-id-g-force">Sysex device ID  Sysex ID G-Force.</a></li><li class="toc-item toc-item-h3"><a href="#map-program-change-no">Map Program change no.</a></li><li class="toc-item toc-item-h3"><a href="#bypass">Bypass</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#setting-up-an-expression-pedal">Setting up an Expression pedal</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#utility-pedal-calibration">Utility, Pedal Calibration).</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#inputs">Inputs).</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#attack">Attack</a></li><li class="toc-item toc-item-h3"><a href="#release">Release</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h2"><a href="#i-o-setup-midi">I/O Setup та MIDI</a></li><li class="toc-item toc-item-h3"><a href="#once-retrig">Once-Retrig</a></li><li class="toc-item toc-item-h3"><a href="#loop-retrig">Loop-Retrig</a></li><li class="toc-item toc-item-h3"><a href="#sust-retrig">Sust-Retrig</a></li><li class="toc-item toc-item-h3"><a href="#speed">Speed</a></li><li class="toc-item toc-item-h3"><a href="#depth">Depth</a></li><li class="toc-item toc-item-h3"><a href="#tempo">Tempo</a></li><li class="toc-item toc-item-h3"><a href="#curve">Curve</a></li><li class="toc-item toc-item-h3"><a href="#pulsewidth">Pulsewidth</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#dials">Dials</a></li><li class="toc-item toc-item-h3"><a href="#pulsewidth-billboard">Pulsewidth   і Billboard.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#card-type-sram-pcmcia-type-1-min-64-k-byte">Card type: SRAM PCMCIA, type 1, min. 64 K byte.</a></li><li class="toc-item toc-item-h3"><a href="#section">УВАГА:</a></li><li class="toc-item toc-item-h3"><a href="#section">УВАГА:</a></li><li class="toc-item toc-item-h2"><a href="#tempo">Tempo</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#tempo-display">Tempo display</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h2"><a href="#tuner">Tuner</a></li><li class="toc-item toc-item-h3"><a href="#tuner-display">Tuner display</a></li><li class="toc-item toc-item-h2"><a href="#section">Блоки ефектів</a></li><li class="toc-item toc-item-h3"><a href="#noise-gate">Noise gate</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#wah-wah">Wah Wah</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#pulsewidth-only-in-advanced">Pulsewidth (only in Advanced)</a></li><li class="toc-item toc-item-h3"><a href="#lfo-phase-only-in-advanced">LFO Phase (only in Advanced)</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#curve-only-in-advanced">Curve (only in Advanced)</a></li><li class="toc-item toc-item-h3"><a href="#pulsewidth-only-in-surround-panner">Pulsewidth (only in Surround Panner)</a></li><li class="toc-item toc-item-h3"><a href="#lfo-phase-only-in-surround-panner">LFO Phase (only in Surround Panner)</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#width-only-in-surround-panner-width-panner">Width   (only in Surround Panner) Керує Width Panner.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#pitch">Блок Pitch</a></li><li class="toc-item toc-item-h3"><a href="#mode-mode-intelligent-pitcher">Mode  Виберіть mode Intelligent Pitcher.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#max-pitch-one-octave">Max. pitch — +/- one octave.</a></li><li class="toc-item toc-item-h3"><a href="#max-delay-time-voice-400-ms">Max. delay time на voice — 400 ms.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#fixed-1">Fixed 1 &amp;</a></li><li class="toc-item toc-item-h3"><a href="#maximum-pitch-12-semitones">Maximum pitch — +/- 12 semitones.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-voice-400-ms">Maximum delay time на voice — 400 ms.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-pitch-24-semitones">Maximum pitch — +/- 24 semitones.</a></li><li class="toc-item toc-item-h3"><a href="#delay-voice1-voice">Delay   - Voice1 &amp; Voice</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-voice-400-ms">Maximum delay time на voice — 400 ms.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#stereo-delay">Stereo Delay</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-740-ms">Maximum delay time — 740 ms.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-pitch-50-cents">Maximum pitch — +/- 50 cents.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-voice-400-ms">Maximum delay time на voice — 400 ms.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#dual-delay">Dual Delay</a></li><li class="toc-item toc-item-h3"><a href="#feedback-1-to-1-feedback-2-to">Feedback 1 to 1/Feedback 2 to</a></li><li class="toc-item toc-item-h3"><a href="#feedback-1-to-2-feedback-2-to-1">Feedback 1 to 2/ Feedback 2 to 1.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#dual-two-tap-delay">Dual Two Tap Delay</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#maximum-delay-time-1480-ms">Maximum delay time — 1480 ms.</a></li><li class="toc-item toc-item-h3"><a href="#pan-position-panning-delay">Pan position  Керує panning Delay.</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#quad-tap-delay">Quad Tap Delay</a></li><li class="toc-item toc-item-h3"><a href="#section">ПРИМІТКА:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#drive">Блок Drive</a></li><li class="toc-item toc-item-h3"><a href="#drive-drive-post-distortion">Блок Drive  Drive — це post distortion.</a></li><li class="toc-item toc-item-h2"><a href="#utility-tempo-tuner">Utility, Tempo та Tuner</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#chorus-flanger">Блок Chorus/Flanger</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#section">Приклад:</a></li><li class="toc-item toc-item-h3"><a href="#mix-mix-direct-sound-effect">Mix  Mix між direct sound і effect.</a></li><li class="toc-item toc-item-h3"><a href="#reverb">Блок Reverb</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-25">Range +/-25.</a></li><li class="toc-item toc-item-h3"><a href="#range-25">Range +/-25.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#color-tonal-color-initial-reflections">Color  Встановлює tonal color initial reflections.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-25">Range +/-25.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#simple-reverb">Simple Reverb</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h3"><a href="#range-50">Range +/-50.</a></li><li class="toc-item toc-item-h2"><a href="#reset">Сторінка Reset</a></li><li class="toc-item toc-item-h3"><a href="#reset-page">Як відкрити Reset page</a></li><li class="toc-item toc-item-h3"><a href="#store-user-def">Store User Def).</a></li><li class="toc-item toc-item-h3"><a href="#test-programs">Test Programs</a></li><li class="toc-item toc-item-h2"><a href="#section">Технічні характеристики</a></li><li class="toc-item toc-item-h2"><a href="#midi">Усунення несправностей та MIDI</a></li><li class="toc-item toc-item-h2"><a href="#midi-implementation-chart">MIDI Implementation Chart</a></li><li class="toc-item toc-item-h2"><a href="#self-test">Self Test</a></li><li class="toc-item toc-item-h2"><a href="#presets">Список presets</a></li><li class="toc-item toc-item-h3"><a href="#mono-1-12">Mono (1–12)</a></li><li class="toc-item toc-item-h3"><a href="#stereo-13-25">Stereo (13–25)</a></li><li class="toc-item toc-item-h3"><a href="#3-way-26-37">3-Way (26–37)</a></li><li class="toc-item toc-item-h3"><a href="#rhythm-38-88">Rhythm (38–88)</a></li><li class="toc-item toc-item-h3"><a href="#lead-89-137">Lead (89–137)</a></li><li class="toc-item toc-item-h3"><a href="#wacky-138-179">Wacky (138–179)</a></li><li class="toc-item toc-item-h3"><a href="#block-180-225">Block (180–225)</a></li></ol>
       </div>
     </div>
   </section>
@@ -799,11 +924,11 @@
 <p>Ви завжди можете скористатися посібником, щоб перевірити розділи, у яких маєте запитання, або якщо хочете глибше розібратися в пристрої.</p>
 <p>Для додаткової інформації зверніться до змісту. З іншого боку, можливо, ви хочете дізнатися трохи більше про G-Force, перш ніж почати натискати клавіші.</p>
 <p>Посібник крок за кроком проведе вас через усі функції G-Force.</p>
-<p>Якщо ви хочете прочитати про конкретну функцію, зверніться до змісту. З точки зору користувача</p>
-<p>Якщо ви відмовитеся від улюблених stomp boxes і інвестуєте гроші в multi-<code>effects</code> unit, найімовірніше втратите простоту та гнучкість вашої педальної схеми.</p>
-<p>Вам часто доведеться мати справу з посібниками розміром із телефонну книгу та інтерфейсами, створеними комп’ютерними фахівцями для комп’ютерних фахівців.</p>
+<p>Якщо ви хочете прочитати про конкретну функцію, зверніться до змісту.</p>
+<h3 id="section">З точки зору користувача</h3><p>Якщо ви відмовитеся від улюблених stomp boxes і інвестуєте гроші в multi-<code>effects</code> unit, найімовірніше втратите простоту та гнучкість вашої педальної схеми.</p>
+<p>Вам часто доведеться мати справу з посібниками розміром із телефонної книги та інтерфейсами, створеними комп’ютерними фахівцями для комп’ютерних фахівців.</p>
 <p>Такі обставини часто відлякують творчих людей і музикантів від подібної «космічної» техніки. Я володів кількома різними ефект-процесорами, кожен з яких мав власну версію ворожого інтерфейсу, тому довго чекав, поки хтось розробить multi-effect, який не суперечить творчому стану розуму.</p>
-<p>Той факт, що цими «хтось» є люди з TC Electronic, гарантує якість усього продукту. G-FORCE — дуже гнучка машина, з якою дуже легко працювати.</p>
+<p>Той факт, що розробниками стали люди з TC Electronic, гарантує якість усього продукту. G-FORCE — дуже гнучка машина, з якою дуже легко працювати.</p>
 <p>Ви можете просто використовувати її як лінійний ланцюг ефектів або вийти за межі будь-якого відомого multi-effect unit і дослідити безліч комбінацій і можливостей керування в G-FORCE.</p>
 <p>Після невеликого часу використання G-Force я повністю змінив свій підхід до створення ефектів для гітари.</p>
 <p>Від простого використання стандартних ефектів на кшталт <code>Delay</code>, <code>Chorus</code> і <code>Reverb</code>, з’єднаних у прямій лінії, я тепер придумую неіснуючі ефекти, наприклад: Tremolo, який спрацьовує лише на високих нотах, тоді як рівень phased distorted dark <code>Delay</code> керується вашою старою volume pedal, відкаліброваною для G-FORCE.</p>
@@ -818,7 +943,7 @@
     </section><section class="manual-section" id="section">
       <div class="section-band">
         <span class="section-band-major">КОРОТКИЙ</span>
-        <span class="section-band-minor">ПОСИЛАННЯ</span>
+        <span class="section-band-minor">ДОВІДНИК</span>
       </div>
 
       <div class="section-header-inline">
@@ -827,7 +952,7 @@
       </div>
 
       <div class="section-main">
-        <h2 class="section-title">Короткий посилання</h2>
+        <h2 class="section-title">Короткий довідник</h2>
         <p>Натисніть <code>Enter</code>, щоб виконати дію (наприклад, під час виклику <code>preset</code>).</p>
 <h4 id="recall">Recall</h4><p>Натисніть <code>Recall</code> (якщо ви ще не там).</p>
 <p>Переконайтеся, що курсор розташований на «<code>Preset</code>», і обертайте <code>Value wheel</code> для прокручування presets.</p>
@@ -2597,7 +2722,7 @@ The Decay — це пізніша частина natural <code>reverb</code>, я
 
       <div class="section-main">
         <h2 class="section-title">MIDI Implementation Chart</h2>
-        <div class="midi-chart-page"><div class="midi-chart-banner">MIDI IMPLEMENTATION CHART</div><p class="midi-chart-subtitle">EFFECTS PROCESSOR G-Force — May 23th, 1997 Version 1.0</p><table class="midi-chart-table">
+        <div class="midi-chart-page"><table class="midi-chart-table">
 <thead>
 <tr>
 <th>Function</th>

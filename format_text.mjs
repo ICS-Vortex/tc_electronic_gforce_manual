@@ -112,7 +112,7 @@ const HEADING_HINTS = new Set([
   'THE VALUE WHEEL', 'ENTER, EXIT', 'EFFECT BYPASS', 'NOISE GATE',
   'Compressor', 'Filters', 'Service', 'Warning!', 'Caution:',
   'For the customers in Canada:', 'Example:', 'NOTE:', 'WARNING:',
-  'Приклад:', 'ПРИМІТКА:', 'УВАГА:',
+  'Приклад:', 'ПРИМІТКА:', 'УВАГА:', 'З точки зору користувача',
 ]);
 
 function isLikelyHeading(text) {
@@ -301,10 +301,11 @@ export function formatRawText(raw, pageNum) {
 
   // Bullet lists: "-   " pattern from original PDF extraction
   text = text.replace(/\s+-\s{2,}/g, '\n• ');
+  text = text.replace(/^З точки зору користувача\s{2,}/, 'З точки зору користувача\n');
 
   // Break before common section headers (English titles between double spaces)
   text = text.replace(
-    /\s{2,}((?:Quick Store with the same name|The Letterbox|Using a Memory Card|Card types|Delete|Recalling a Preset|Recalling a single effect|Optimal preset change|Setting up an Effect|Editing an effect|How to [A-Za-z][^•]{3,60}?|Creating a [A-Za-z][^•]{3,50}?|The [A-Za-z][^•]{3,40}?|From a users point of view|About this Manual|For the customers in Canada:))\s{2,}/g,
+    /\s{2,}((?:Quick Store with the same name|The Letterbox|Using a Memory Card|Card types|Delete|Recalling a Preset|Recalling a single effect|Optimal preset change|Setting up an Effect|Editing an effect|How to [A-Za-z][^•]{3,60}?|Creating a [A-Za-z][^•]{3,50}?|The [A-Za-z][^•]{3,40}?|From a users point of view|З точки зору користувача|About this Manual|For the customers in Canada:))\s{2,}/g,
     '\n\n$1\n'
   );
 

@@ -15,10 +15,6 @@ function divider() {
 export function midiImplementationChartMarkdown() {
   return `<div class="midi-chart-page">
 
-<div class="midi-chart-banner">MIDI IMPLEMENTATION CHART</div>
-
-<p class="midi-chart-subtitle">EFFECTS PROCESSOR G-Force — May 23th, 1997 Version 1.0</p>
-
 <table class="midi-chart-table">
 <thead>
 <tr>

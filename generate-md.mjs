@@ -307,6 +307,10 @@ function injectManualAssets(markdown) {
   let result = markdown;
 
   result = result.replace(
+    /(зверніться до змісту\.)\s+З точки зору користувача/,
+    `$1\n\n### З точки зору користувача`
+  );
+  result = result.replace(
     /(- Перевірте напругу у вашому регіоні та використовуйте правильний тип\.)\s*\n(?:.*\n)*?(?=Part 1: Emission|EN 55103-2|З посиланням на положення)/,
     `$1 Див. таблицю нижче:\n\n${VOLTAGE_TABLE}\n\n`
   );

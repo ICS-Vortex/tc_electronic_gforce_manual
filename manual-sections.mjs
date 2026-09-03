@@ -3,7 +3,7 @@ export const MANUAL_SECTIONS = [
   { title: 'Безпека та нормативні вимоги', from: 3, to: 4 },
   { title: 'Про цей посібник', from: 5, to: 5, custom: 'toc' },
   { title: 'Вітаємо', from: 7, to: 8 },
-  { title: 'Короткий посилання', from: 9, to: 9 },
+  { title: 'Короткий довідник', from: 9, to: 9 },
   { title: 'Передня панель', from: 10, to: 11 },
   { title: 'Задня панель', from: 12, to: 12 },
   { title: 'Схема сигналу', from: 13, to: 13 },
