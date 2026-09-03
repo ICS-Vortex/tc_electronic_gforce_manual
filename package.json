@@ -8,7 +8,8 @@
     "md": "node generate-md.mjs",
     "pdf": "node build_pdf.mjs",
     "build": "node build_pdf.mjs",
-    "upscale-image": "node scripts/upscale-device-image.mjs"
+    "upscale-image": "node scripts/upscale-device-image.mjs",
+    "remove-bg": "node scripts/remove-image-backgrounds.mjs"
   },
   "dependencies": {
     "pdf-lib": "^1.17.1"
